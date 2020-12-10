@@ -242,10 +242,10 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIm-wx-0TX" customClass="Segmentio" customModule="Segmentio">
-                                <rect key="frame" x="0.0" y="374" width="428" height="40"/>
+                                <rect key="frame" x="0.0" y="374" width="428" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1e2-23-iZo"/>
+                                    <constraint firstAttribute="height" constant="60" id="1e2-23-iZo"/>
                                 </constraints>
                             </view>
                         </subviews>

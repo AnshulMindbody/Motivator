@@ -46,7 +46,7 @@ class DashboardViewController: UIViewController {
             image: nil
         ),
         SegmentioItem(
-            title: "Todo Lsit",
+            title: "Todo List",
             image: nil
         ),
          SegmentioItem(

@@ -203,8 +203,8 @@ public struct SegmentioOptions {
         self.segmentPosition = .fixed(maxVisibleItems: 4)
         self.scrollEnabled = true
         self.indicatorOptions = SegmentioIndicatorOptions()
-        self.horizontalSeparatorOptions = SegmentioHorizontalSeparatorOptions()
-        self.verticalSeparatorOptions = SegmentioVerticalSeparatorOptions()
+        self.horizontalSeparatorOptions = nil
+        self.verticalSeparatorOptions = nil
         self.imageContentMode = .center
         self.labelTextAlignment = .center
         self.labelTextNumberOfLines = 0
