@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F795A6656C56DAB112E3536 /* Pods_Motivator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98764932EAF3CFE18B223BD8 /* Pods_Motivator.framework */; };
 		872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319B62581EB5E00AECA57 /* AppDelegate.swift */; };
 		872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319B82581EB5E00AECA57 /* SceneDelegate.swift */; };
 		872319BE2581EB5E00AECA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872319BC2581EB5E00AECA57 /* Main.storyboard */; };
 		872319C02581EB6000AECA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872319BF2581EB6000AECA57 /* Assets.xcassets */; };
 		872319C32581EB6000AECA57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872319C12581EB6000AECA57 /* LaunchScreen.storyboard */; };
-		872319CD2581EEC900AECA57 /* Conduit in Frameworks */ = {isa = PBXBuildFile; productRef = 872319CC2581EEC900AECA57 /* Conduit */; };
-		872319D12581F47000AECA57 /* UXComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 872319D02581F47000AECA57 /* UXComponents */; };
+		872319CD2581EEC900AECA57 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 872319CC2581EEC900AECA57 /* SwiftPackageProductDependency */; };
+		872319D12581F47000AECA57 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 872319D02581F47000AECA57 /* SwiftPackageProductDependency */; };
 		872319DF2581F56400AECA57 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319DE2581F56400AECA57 /* DashboardViewController.swift */; };
 		872319E32581F5B500AECA57 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319E22581F5B500AECA57 /* TodoListViewController.swift */; };
 		872319E72581F74400AECA57 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319E62581F74400AECA57 /* LoginViewController.swift */; };
-		872319EB2581FA5A00AECA57 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 872319EA2581FA5A00AECA57 /* SideMenu */; };
+		872319EB2581FA5A00AECA57 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 872319EA2581FA5A00AECA57 /* SwiftPackageProductDependency */; };
 		872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319ED2582012C00AECA57 /* SideMenuViewController.swift */; };
-		872319F22582058F00AECA57 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 872319F12582058F00AECA57 /* Cosmos */; };
+		872319F22582058F00AECA57 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 872319F12582058F00AECA57 /* SwiftPackageProductDependency */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +48,9 @@
 		872319E22581F5B500AECA57 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		872319E62581F74400AECA57 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		872319ED2582012C00AECA57 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		98764932EAF3CFE18B223BD8 /* Pods_Motivator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motivator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2571460B8DC99F8218C1E33 /* Pods-Motivator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.release.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.release.xcconfig"; sourceTree = "<group>"; };
+		F097CAC9A2CBF9F8903DE0ED /* Pods-Motivator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.debug.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,22 +58,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				872319CD2581EEC900AECA57 /* Conduit in Frameworks */,
-				872319EB2581FA5A00AECA57 /* SideMenu in Frameworks */,
-				872319F22582058F00AECA57 /* Cosmos in Frameworks */,
-				872319D12581F47000AECA57 /* UXComponents in Frameworks */,
+				872319CD2581EEC900AECA57 /* BuildFile in Frameworks */,
+				872319EB2581FA5A00AECA57 /* BuildFile in Frameworks */,
+				872319F22582058F00AECA57 /* BuildFile in Frameworks */,
+				872319D12581F47000AECA57 /* BuildFile in Frameworks */,
+				5F795A6656C56DAB112E3536 /* Pods_Motivator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47FAC2A2D928C87B41258FCB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F097CAC9A2CBF9F8903DE0ED /* Pods-Motivator.debug.xcconfig */,
+				B2571460B8DC99F8218C1E33 /* Pods-Motivator.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		872319AA2581EB5E00AECA57 = {
 			isa = PBXGroup;
 			children = (
 				872319B52581EB5E00AECA57 /* Motivator */,
 				872319B42581EB5E00AECA57 /* Products */,
 				87231A0025821C2700AECA57 /* Frameworks */,
+				47FAC2A2D928C87B41258FCB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +189,7 @@
 		87231A0025821C2700AECA57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				98764932EAF3CFE18B223BD8 /* Pods_Motivator.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,10 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 872319C72581EB6000AECA57 /* Build configuration list for PBXNativeTarget "Motivator" */;
 			buildPhases = (
+				30F029E439BBF2AACFE1CA7A /* [CP] Check Pods Manifest.lock */,
 				872319AF2581EB5E00AECA57 /* Sources */,
 				872319B02581EB5E00AECA57 /* Frameworks */,
 				872319B12581EB5E00AECA57 /* Resources */,
 				872319FF25821BC000AECA57 /* Embed Frameworks */,
+				D1CBE5E2E8C775C2D76F5F0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,10 +214,10 @@
 			);
 			name = Motivator;
 			packageProductDependencies = (
-				872319CC2581EEC900AECA57 /* Conduit */,
-				872319D02581F47000AECA57 /* UXComponents */,
-				872319EA2581FA5A00AECA57 /* SideMenu */,
-				872319F12582058F00AECA57 /* Cosmos */,
+				872319CC2581EEC900AECA57 /* SwiftPackageProductDependency */,
+				872319D02581F47000AECA57 /* SwiftPackageProductDependency */,
+				872319EA2581FA5A00AECA57 /* SwiftPackageProductDependency */,
+				872319F12582058F00AECA57 /* SwiftPackageProductDependency */,
 			);
 			productName = Motivator;
 			productReference = 872319B32581EB5E00AECA57 /* Motivator.app */;
@@ -228,10 +247,10 @@
 			);
 			mainGroup = 872319AA2581EB5E00AECA57;
 			packageReferences = (
-				872319CB2581EEC900AECA57 /* XCRemoteSwiftPackageReference "Conduit" */,
-				872319CF2581F47000AECA57 /* XCRemoteSwiftPackageReference "UXComponents-iOS" */,
-				872319E92581FA5A00AECA57 /* XCRemoteSwiftPackageReference "SideMenu" */,
-				872319F02582058F00AECA57 /* XCRemoteSwiftPackageReference "Cosmos" */,
+				872319CB2581EEC900AECA57 /* RemoteSwiftPackageReference */,
+				872319CF2581F47000AECA57 /* RemoteSwiftPackageReference */,
+				872319E92581FA5A00AECA57 /* RemoteSwiftPackageReference */,
+				872319F02582058F00AECA57 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 872319B42581EB5E00AECA57 /* Products */;
 			projectDirPath = "";
@@ -254,6 +273,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30F029E439BBF2AACFE1CA7A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Motivator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1CBE5E2E8C775C2D76F5F0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Motivator/Pods-Motivator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Motivator/Pods-Motivator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Motivator/Pods-Motivator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		872319AF2581EB5E00AECA57 /* Sources */ = {
@@ -409,6 +470,7 @@
 		};
 		872319C82581EB6000AECA57 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F097CAC9A2CBF9F8903DE0ED /* Pods-Motivator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -427,6 +489,7 @@
 		};
 		872319C92581EB6000AECA57 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2571460B8DC99F8218C1E33 /* Pods-Motivator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -467,7 +530,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		872319CB2581EEC900AECA57 /* XCRemoteSwiftPackageReference "Conduit" */ = {
+		872319CB2581EEC900AECA57 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mindbody/Conduit.git";
 			requirement = {
@@ -475,7 +538,7 @@
 				minimumVersion = 0.22.0;
 			};
 		};
-		872319CF2581F47000AECA57 /* XCRemoteSwiftPackageReference "UXComponents-iOS" */ = {
+		872319CF2581F47000AECA57 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mindbody/UXComponents-iOS.git";
 			requirement = {
@@ -483,7 +546,7 @@
 				minimumVersion = 0.8.0;
 			};
 		};
-		872319E92581FA5A00AECA57 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+		872319E92581FA5A00AECA57 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
 			requirement = {
@@ -491,7 +554,7 @@
 				minimumVersion = 6.5.0;
 			};
 		};
-		872319F02582058F00AECA57 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+		872319F02582058F00AECA57 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/Cosmos";
 			requirement = {
@@ -502,24 +565,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		872319CC2581EEC900AECA57 /* Conduit */ = {
+		872319CC2581EEC900AECA57 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 872319CB2581EEC900AECA57 /* XCRemoteSwiftPackageReference "Conduit" */;
+			package = 872319CB2581EEC900AECA57 /* RemoteSwiftPackageReference */;
 			productName = Conduit;
 		};
-		872319D02581F47000AECA57 /* UXComponents */ = {
+		872319D02581F47000AECA57 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 872319CF2581F47000AECA57 /* XCRemoteSwiftPackageReference "UXComponents-iOS" */;
+			package = 872319CF2581F47000AECA57 /* RemoteSwiftPackageReference */;
 			productName = UXComponents;
 		};
-		872319EA2581FA5A00AECA57 /* SideMenu */ = {
+		872319EA2581FA5A00AECA57 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 872319E92581FA5A00AECA57 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			package = 872319E92581FA5A00AECA57 /* RemoteSwiftPackageReference */;
 			productName = SideMenu;
 		};
-		872319F12582058F00AECA57 /* Cosmos */ = {
+		872319F12582058F00AECA57 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 872319F02582058F00AECA57 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			package = 872319F02582058F00AECA57 /* RemoteSwiftPackageReference */;
 			productName = Cosmos;
 		};
 /* End XCSwiftPackageProductDependency section */

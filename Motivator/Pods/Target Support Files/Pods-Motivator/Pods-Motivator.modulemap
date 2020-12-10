@@ -1,0 +1,6 @@
+framework module Pods_Motivator {
+  umbrella header "Pods-Motivator-umbrella.h"
+
+  export *
+  module * { export * }
+}
