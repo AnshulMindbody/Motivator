@@ -7,5 +7,6 @@ target 'Motivator' do
 
   # Pods for Motivator
 	pod 'Charts'
+  pod 'Segmentio'
 
 end

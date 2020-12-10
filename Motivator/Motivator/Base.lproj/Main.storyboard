@@ -213,7 +213,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-7D-Svv">
-                                <rect key="frame" x="218" y="166" width="200" height="116.66666666666669"/>
+                                <rect key="frame" x="218" y="184" width="200" height="116.66666666666669"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-kP-Q3D" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
@@ -241,17 +241,28 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIm-wx-0TX" customClass="Segmentio" customModule="Segmentio">
+                                <rect key="frame" x="0.0" y="374" width="428" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1e2-23-iZo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qif-0k-3yp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nnf-7D-Svv" firstAttribute="top" secondItem="xfA-fL-v24" secondAttribute="bottom" constant="12" id="KT1-dj-3Px"/>
-                            <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="nnf-7D-Svv" secondAttribute="trailing" constant="10" id="ZlV-g2-gSg"/>
+                            <constraint firstItem="yIm-wx-0TX" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" id="25e-rT-eRd"/>
+                            <constraint firstItem="yIm-wx-0TX" firstAttribute="top" secondItem="PgO-Te-wW0" secondAttribute="bottom" constant="8" symbolic="YES" id="349-JP-9pH"/>
+                            <constraint firstItem="nnf-7D-Svv" firstAttribute="top" secondItem="xfA-fL-v24" secondAttribute="bottom" constant="30" id="KT1-dj-3Px"/>
+                            <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="nnf-7D-Svv" secondAttribute="trailing" constant="10" id="X8k-rU-s8o"/>
                             <constraint firstItem="xfA-fL-v24" firstAttribute="top" secondItem="Qif-0k-3yp" secondAttribute="top" constant="10" id="aZi-xu-gwv"/>
                             <constraint firstItem="xfA-fL-v24" firstAttribute="top" secondItem="Qif-0k-3yp" secondAttribute="top" constant="10" id="dxg-nU-8uC"/>
                             <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="xfA-fL-v24" secondAttribute="trailing" constant="10" id="ije-GF-w3f"/>
                             <constraint firstItem="xfA-fL-v24" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" constant="10" id="sqw-Ye-yb2"/>
+                            <constraint firstItem="yIm-wx-0TX" firstAttribute="trailing" secondItem="Qif-0k-3yp" secondAttribute="trailing" id="u9a-l1-NPf"/>
                             <constraint firstItem="PgO-Te-wW0" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" constant="10" id="vn9-GX-ab2"/>
+                            <constraint firstItem="nnf-7D-Svv" firstAttribute="leading" secondItem="PgO-Te-wW0" secondAttribute="trailing" constant="8" symbolic="YES" id="yqs-Mv-0yC"/>
                             <constraint firstItem="PgO-Te-wW0" firstAttribute="top" secondItem="xfA-fL-v24" secondAttribute="bottom" constant="12" id="zPX-dd-1y2"/>
                         </constraints>
                     </view>
@@ -265,11 +276,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="pieChartView" destination="PgO-Te-wW0" id="WdQ-oe-0nT"/>
+                        <outlet property="segmentioView" destination="yIm-wx-0TX" id="peN-dX-djP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pm-4c-BYX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="539.71962616822429" y="-3276.6738660907131"/>
+            <point key="canvasLocation" x="933.64485981308405" y="-3354.427645788337"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="R9x-NC-m3P">

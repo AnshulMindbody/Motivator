@@ -2,17 +2,21 @@ PODS:
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
+  - Segmentio (4.1)
 
 DEPENDENCIES:
   - Charts
+  - Segmentio
 
 SPEC REPOS:
   trunk:
     - Charts
+    - Segmentio
 
 SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
 
-PODFILE CHECKSUM: bc07d1c48e44064da70c252a548eb040e85f15de
+PODFILE CHECKSUM: be6d523b9ea722563e1f800291a8e2e82c5ad636
 
 COCOAPODS: 1.10.0

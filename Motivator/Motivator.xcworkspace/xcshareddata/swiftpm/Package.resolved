@@ -27,15 +27,6 @@
           "revision": "8bd4fd128923cf5494fa726839af8afe12908ad9",
           "version": "6.5.0"
         }
-      },
-      {
-        "package": "UXComponents",
-        "repositoryURL": "https://github.com/mindbody/UXComponents-iOS.git",
-        "state": {
-          "branch": null,
-          "revision": "e99bde066d366066728da1122a9e6755d3887168",
-          "version": "0.8.0"
-        }
       }
     ]
   },

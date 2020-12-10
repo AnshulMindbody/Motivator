@@ -7,12 +7,15 @@
 
 import UIKit
 import Charts
+import Segmentio
 
 class DashboardViewController: UIViewController {
     
     @IBOutlet var pieChartView: PieChartView!
     let players = ["Ozil", "Ramsey", "Laca"]
     let goals = [6, 8, 26]
+    @IBOutlet weak var segmentioView: Segmentio!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
