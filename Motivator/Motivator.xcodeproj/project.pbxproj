@@ -3,27 +3,50 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319B62581EB5E00AECA57 /* AppDelegate.swift */; };
 		872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319B82581EB5E00AECA57 /* SceneDelegate.swift */; };
-		872319BB2581EB5E00AECA57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319BA2581EB5E00AECA57 /* ViewController.swift */; };
 		872319BE2581EB5E00AECA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872319BC2581EB5E00AECA57 /* Main.storyboard */; };
 		872319C02581EB6000AECA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 872319BF2581EB6000AECA57 /* Assets.xcassets */; };
 		872319C32581EB6000AECA57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872319C12581EB6000AECA57 /* LaunchScreen.storyboard */; };
+		872319CD2581EEC900AECA57 /* Conduit in Frameworks */ = {isa = PBXBuildFile; productRef = 872319CC2581EEC900AECA57 /* Conduit */; };
+		872319D12581F47000AECA57 /* UXComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 872319D02581F47000AECA57 /* UXComponents */; };
+		872319DF2581F56400AECA57 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319DE2581F56400AECA57 /* DashboardViewController.swift */; };
+		872319E32581F5B500AECA57 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319E22581F5B500AECA57 /* TodoListViewController.swift */; };
+		872319E72581F74400AECA57 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319E62581F74400AECA57 /* LoginViewController.swift */; };
+		872319EB2581FA5A00AECA57 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 872319EA2581FA5A00AECA57 /* SideMenu */; };
+		872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319ED2582012C00AECA57 /* SideMenuViewController.swift */; };
+		872319F22582058F00AECA57 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 872319F12582058F00AECA57 /* Cosmos */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		872319FF25821BC000AECA57 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		872319B32581EB5E00AECA57 /* Motivator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motivator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872319B62581EB5E00AECA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		872319B82581EB5E00AECA57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		872319BA2581EB5E00AECA57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		872319BD2581EB5E00AECA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		872319BF2581EB6000AECA57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		872319C22581EB6000AECA57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		872319C42581EB6000AECA57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		872319DE2581F56400AECA57 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		872319E22581F5B500AECA57 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		872319E62581F74400AECA57 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		872319ED2582012C00AECA57 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +54,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872319CD2581EEC900AECA57 /* Conduit in Frameworks */,
+				872319EB2581FA5A00AECA57 /* SideMenu in Frameworks */,
+				872319F22582058F00AECA57 /* Cosmos in Frameworks */,
+				872319D12581F47000AECA57 /* UXComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +69,7 @@
 			children = (
 				872319B52581EB5E00AECA57 /* Motivator */,
 				872319B42581EB5E00AECA57 /* Products */,
+				87231A0025821C2700AECA57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +84,97 @@
 		872319B52581EB5E00AECA57 /* Motivator */ = {
 			isa = PBXGroup;
 			children = (
+				872319D42581F49700AECA57 /* Dashboard */,
+				872319D32581F48D00AECA57 /* Login */,
 				872319B62581EB5E00AECA57 /* AppDelegate.swift */,
 				872319B82581EB5E00AECA57 /* SceneDelegate.swift */,
-				872319BA2581EB5E00AECA57 /* ViewController.swift */,
 				872319BC2581EB5E00AECA57 /* Main.storyboard */,
 				872319BF2581EB6000AECA57 /* Assets.xcassets */,
 				872319C12581EB6000AECA57 /* LaunchScreen.storyboard */,
 				872319C42581EB6000AECA57 /* Info.plist */,
 			);
 			path = Motivator;
+			sourceTree = "<group>";
+		};
+		872319D32581F48D00AECA57 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				872319E62581F74400AECA57 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		872319D42581F49700AECA57 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				872319DC2581F52200AECA57 /* Side Menu */,
+				872319DB2581F50900AECA57 /* Daily Challenge */,
+				872319DA2581F4F500AECA57 /* Staff Feed */,
+				872319D92581F4E700AECA57 /* Comments */,
+				872319D82581F4DA00AECA57 /* Leaderboard */,
+				872319D72581F4BE00AECA57 /* Upcoming Appointment */,
+				872319D62581F4AE00AECA57 /* ToDo */,
+				872319DE2581F56400AECA57 /* DashboardViewController.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		872319D62581F4AE00AECA57 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				872319E22581F5B500AECA57 /* TodoListViewController.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		872319D72581F4BE00AECA57 /* Upcoming Appointment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Upcoming Appointment";
+			sourceTree = "<group>";
+		};
+		872319D82581F4DA00AECA57 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		872319D92581F4E700AECA57 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		872319DA2581F4F500AECA57 /* Staff Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Staff Feed";
+			sourceTree = "<group>";
+		};
+		872319DB2581F50900AECA57 /* Daily Challenge */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Daily Challenge";
+			sourceTree = "<group>";
+		};
+		872319DC2581F52200AECA57 /* Side Menu */ = {
+			isa = PBXGroup;
+			children = (
+				872319ED2582012C00AECA57 /* SideMenuViewController.swift */,
+			);
+			path = "Side Menu";
+			sourceTree = "<group>";
+		};
+		87231A0025821C2700AECA57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,12 +187,19 @@
 				872319AF2581EB5E00AECA57 /* Sources */,
 				872319B02581EB5E00AECA57 /* Frameworks */,
 				872319B12581EB5E00AECA57 /* Resources */,
+				872319FF25821BC000AECA57 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Motivator;
+			packageProductDependencies = (
+				872319CC2581EEC900AECA57 /* Conduit */,
+				872319D02581F47000AECA57 /* UXComponents */,
+				872319EA2581FA5A00AECA57 /* SideMenu */,
+				872319F12582058F00AECA57 /* Cosmos */,
+			);
 			productName = Motivator;
 			productReference = 872319B32581EB5E00AECA57 /* Motivator.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +227,12 @@
 				Base,
 			);
 			mainGroup = 872319AA2581EB5E00AECA57;
+			packageReferences = (
+				872319CB2581EEC900AECA57 /* XCRemoteSwiftPackageReference "Conduit" */,
+				872319CF2581F47000AECA57 /* XCRemoteSwiftPackageReference "UXComponents-iOS" */,
+				872319E92581FA5A00AECA57 /* XCRemoteSwiftPackageReference "SideMenu" */,
+				872319F02582058F00AECA57 /* XCRemoteSwiftPackageReference "Cosmos" */,
+			);
 			productRefGroup = 872319B42581EB5E00AECA57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,9 +260,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				872319BB2581EB5E00AECA57 /* ViewController.swift in Sources */,
 				872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */,
 				872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */,
+				872319DF2581F56400AECA57 /* DashboardViewController.swift in Sources */,
+				872319E72581F74400AECA57 /* LoginViewController.swift in Sources */,
+				872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */,
+				872319E32581F5B500AECA57 /* TodoListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +465,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		872319CB2581EEC900AECA57 /* XCRemoteSwiftPackageReference "Conduit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mindbody/Conduit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.22.0;
+			};
+		};
+		872319CF2581F47000AECA57 /* XCRemoteSwiftPackageReference "UXComponents-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mindbody/UXComponents-iOS.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
+		872319E92581FA5A00AECA57 /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+		872319F02582058F00AECA57 /* XCRemoteSwiftPackageReference "Cosmos" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/Cosmos";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 23.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		872319CC2581EEC900AECA57 /* Conduit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 872319CB2581EEC900AECA57 /* XCRemoteSwiftPackageReference "Conduit" */;
+			productName = Conduit;
+		};
+		872319D02581F47000AECA57 /* UXComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 872319CF2581F47000AECA57 /* XCRemoteSwiftPackageReference "UXComponents-iOS" */;
+			productName = UXComponents;
+		};
+		872319EA2581FA5A00AECA57 /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 872319E92581FA5A00AECA57 /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+		872319F12582058F00AECA57 /* Cosmos */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 872319F02582058F00AECA57 /* XCRemoteSwiftPackageReference "Cosmos" */;
+			productName = Cosmos;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 872319AB2581EB5E00AECA57 /* Project object */;
 }

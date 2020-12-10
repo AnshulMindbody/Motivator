@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Conduit",
+        "repositoryURL": "https://github.com/mindbody/Conduit.git",
+        "state": {
+          "branch": null,
+          "revision": "12fe83187edcb6e4afd5e9e525dcf9d4d639e8e7",
+          "version": "0.22.0"
+        }
+      },
+      {
+        "package": "Cosmos",
+        "repositoryURL": "https://github.com/evgenyneu/Cosmos",
+        "state": {
+          "branch": null,
+          "revision": "cce521e734d0090494bd4afab5fd2e2f2465c1af",
+          "version": "23.0.0"
+        }
+      },
+      {
+        "package": "SideMenu",
+        "repositoryURL": "https://github.com/jonkykong/SideMenu.git",
+        "state": {
+          "branch": null,
+          "revision": "8bd4fd128923cf5494fa726839af8afe12908ad9",
+          "version": "6.5.0"
+        }
+      },
+      {
+        "package": "UXComponents",
+        "repositoryURL": "https://github.com/mindbody/UXComponents-iOS.git",
+        "state": {
+          "branch": null,
+          "revision": "e99bde066d366066728da1122a9e6755d3887168",
+          "version": "0.8.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
