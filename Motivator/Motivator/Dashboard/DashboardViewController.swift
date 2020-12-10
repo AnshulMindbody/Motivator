@@ -20,13 +20,19 @@ final class DashboardViewController: UIViewController {
     }
     
     @IBOutlet var pieChartView: PieChartView!
-    @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var segmentioView: Segmentio!
+    @IBOutlet var tableView: UITableView! {
+        didSet {
+            tableView.tableFooterView = UIView()
+        }
+    }
+    @IBOutlet var segmentioView: Segmentio!
+    @IBOutlet var floatingButton: UIButton!
     
     var dashBoardList: [String]{
         
         switch dashboardType{
         case .leaderboard:
+            floatingButton.isHidden = true
          return [
             "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
             "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
@@ -38,6 +44,7 @@ final class DashboardViewController: UIViewController {
             "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd"
             ]
         case .upcomingAppointment:
+            floatingButton.isHidden = true
             return [
                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
                 "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
@@ -51,6 +58,7 @@ final class DashboardViewController: UIViewController {
                 "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment"
                ]
         case .dailyChallenge:
+            floatingButton.isHidden = false
             return [
                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
                 "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
@@ -63,6 +71,7 @@ final class DashboardViewController: UIViewController {
                 "dailyChallenge dailyChallenge dailyChallenge dailyChallenge"
                ]
         case .todoList:
+            floatingButton.isHidden = false
             return [
                "todoList todoList todoList todoList",
                 "todoList todoList todoList todoList",
@@ -77,6 +86,7 @@ final class DashboardViewController: UIViewController {
                 "todoList todoList todoList todoList"
                ]
         case .staffFeed:
+            floatingButton.isHidden = true
             return [
                "staffFeed staffFeed staffFeed staffFeed",
                 "staffFeed staffFeed staffFeed staffFeed",
@@ -98,7 +108,7 @@ final class DashboardViewController: UIViewController {
     var sections: [DashboardType] = DashboardType.allCases
     var content = [SegmentioItem]()
     
-    let players = ["Ozil", "Ramsey", "Laca"]
+    let players = ["Leo", "Ruchi", "Anshul"]
     let goals = [10, 20, 70]
     
     override func viewDidLoad() {
@@ -131,6 +141,7 @@ extension DashboardViewController: UITableViewDataSource {
 }
 
 extension DashboardViewController {
+    
     func customizeChart(dataPoints: [String], values: [Double]) {
       
       // 1. Set ChartDataEntry
@@ -182,26 +193,26 @@ extension DashboardViewController {
         }
         
         content =   [
-         SegmentioItem(
-            title: "Leaderboard",
-            image: nil
-        ),
-          SegmentioItem(
-            title: "Upcoming Appointment",
-            image: nil
-        ),
-        SegmentioItem(
-            title: "Todo List",
-            image: nil
-        ),
-         SegmentioItem(
-            title: "Staff Feed",
-            image: nil
-        ),
-         SegmentioItem(
-            title: "Daily Challenge",
-            image: nil
-        ),
+            SegmentioItem(
+                title: "Leaderboard",
+                image: nil
+            ),
+            SegmentioItem(
+                title: "Upcoming Appointment",
+                image: nil
+            ),
+            SegmentioItem(
+                title: "Daily Challenge",
+                image: nil
+            ),
+            SegmentioItem(
+                title: "Todo List",
+                image: nil
+            ),
+            SegmentioItem(
+                title: "Staff Feed",
+                image: nil
+            ),
         ]
         segmentioView.setup(content: content, style: .onlyLabel, options: nil)
     }

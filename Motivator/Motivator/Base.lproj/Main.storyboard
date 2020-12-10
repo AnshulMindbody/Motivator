@@ -241,13 +241,6 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIm-wx-0TX" customClass="Segmentio" customModule="Segmentio">
-                                <rect key="frame" x="0.0" y="374" width="428" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="1e2-23-iZo"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tIH-eE-cR7">
                                 <rect key="frame" x="0.0" y="439" width="428" height="453"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -256,6 +249,22 @@
                                     <outlet property="delegate" destination="zAC-m1-h4J" id="l4g-M0-A3N"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIm-wx-0TX" customClass="Segmentio" customModule="Segmentio">
+                                <rect key="frame" x="0.0" y="374" width="428" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1e2-23-iZo"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIe-HB-OBj">
+                                <rect key="frame" x="334" y="818" width="54" height="54"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="2Xx-Xy-5Ow"/>
+                                    <constraint firstAttribute="height" constant="54" id="8Bm-rI-K9B"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="floating"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qif-0k-3yp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -263,6 +272,8 @@
                             <constraint firstItem="yIm-wx-0TX" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" id="25e-rT-eRd"/>
                             <constraint firstItem="yIm-wx-0TX" firstAttribute="top" secondItem="PgO-Te-wW0" secondAttribute="bottom" constant="8" symbolic="YES" id="349-JP-9pH"/>
                             <constraint firstItem="nnf-7D-Svv" firstAttribute="top" secondItem="xfA-fL-v24" secondAttribute="bottom" constant="40" id="KT1-dj-3Px"/>
+                            <constraint firstItem="Qif-0k-3yp" firstAttribute="bottom" secondItem="wIe-HB-OBj" secondAttribute="bottom" constant="20" id="LFa-Hn-9Mi"/>
+                            <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="wIe-HB-OBj" secondAttribute="trailing" constant="40" id="Wzc-aW-frC"/>
                             <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="nnf-7D-Svv" secondAttribute="trailing" constant="10" id="X8k-rU-s8o"/>
                             <constraint firstItem="xfA-fL-v24" firstAttribute="top" secondItem="Qif-0k-3yp" secondAttribute="top" constant="10" id="aZi-xu-gwv"/>
                             <constraint firstItem="xfA-fL-v24" firstAttribute="top" secondItem="Qif-0k-3yp" secondAttribute="top" constant="10" id="dxg-nU-8uC"/>
@@ -287,6 +298,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="floatingButton" destination="wIe-HB-OBj" id="ebB-WU-7c5"/>
                         <outlet property="pieChartView" destination="PgO-Te-wW0" id="WdQ-oe-0nT"/>
                         <outlet property="segmentioView" destination="yIm-wx-0TX" id="peN-dX-djP"/>
                         <outlet property="tableView" destination="tIH-eE-cR7" id="Onb-uZ-KLP"/>
@@ -391,6 +403,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="floating" width="172" height="172"/>
         <image name="sidebar.left" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
