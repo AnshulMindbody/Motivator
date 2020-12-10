@@ -15,6 +15,8 @@ class DashboardViewController: UIViewController {
     let players = ["Ozil", "Ramsey", "Laca"]
     let goals = [6, 8, 26]
     @IBOutlet weak var segmentioView: Segmentio!
+    var content = [SegmentioItem]()
+    
 
 
     override func viewDidLoad() {
@@ -22,10 +24,42 @@ class DashboardViewController: UIViewController {
         title = "Dashboard"
         pieChartView.drawHoleEnabled = false
         customizeChart(dataPoints: players, values: goals.map{ Double($0) })
+        segmentioView.selectedSegmentioIndex = 0
+        segmentioView.valueDidChange = { segmentio, segmentIndex in
+            print("Selected item: ", segmentIndex)
+        }
+        
+        loadSlidingTabControl()
 
         // Do any additional setup after loading the view.
     }
     
+    func loadSlidingTabControl(){
+        
+        content =   [
+         SegmentioItem(
+            title: "Leaderboard",
+            image: nil
+        ),
+          SegmentioItem(
+            title: "Upcoming Appointment",
+            image: nil
+        ),
+        SegmentioItem(
+            title: "Todo Lsit",
+            image: nil
+        ),
+         SegmentioItem(
+            title: "Staff Feed",
+            image: nil
+        ),
+         SegmentioItem(
+            title: "Daily Challenge",
+            image: nil
+        ),
+        ]
+        segmentioView.setup(content: content, style: .onlyLabel, options: nil)
+    }
     
     func customizeChart(dataPoints: [String], values: [Double]) {
       
