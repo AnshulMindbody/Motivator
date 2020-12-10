@@ -200,43 +200,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="What is on your mind?" translatesAutoresizingMaskIntoConstraints="NO" id="xfA-fL-v24">
+                            <searchBar contentMode="redraw" placeholder="What is on your mind?" translatesAutoresizingMaskIntoConstraints="NO" id="xfA-fL-v24">
                                 <rect key="frame" x="10" y="98" width="408" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgO-Te-wW0" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PgO-Te-wW0" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="10" y="166" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="UD0-0b-m4g"/>
+                                    <constraint firstAttribute="height" constant="200" id="kJp-WP-2ui"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjc-D5-YbW">
-                                <rect key="frame" x="218" y="238" width="200" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Level: 23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-lj-q54">
-                                <rect key="frame" x="218" y="284" width="200" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-kP-Q3D" customClass="CosmosView" customModule="Cosmos">
-                                <rect key="frame" x="218" y="166" width="200" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-7D-Svv">
+                                <rect key="frame" x="218" y="166" width="200" height="116.66666666666669"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-kP-Q3D" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="EJV-QQ-O9r"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjc-D5-YbW">
+                                        <rect key="frame" x="0.0" y="53" width="200" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-lj-q54">
+                                        <rect key="frame" x="0.0" y="96.333333333333314" width="200" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qif-0k-3yp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nnf-7D-Svv" firstAttribute="top" secondItem="xfA-fL-v24" secondAttribute="bottom" constant="12" id="KT1-dj-3Px"/>
+                            <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="nnf-7D-Svv" secondAttribute="trailing" constant="10" id="ZlV-g2-gSg"/>
+                            <constraint firstItem="xfA-fL-v24" firstAttribute="top" secondItem="Qif-0k-3yp" secondAttribute="top" constant="10" id="aZi-xu-gwv"/>
+                            <constraint firstItem="xfA-fL-v24" firstAttribute="top" secondItem="Qif-0k-3yp" secondAttribute="top" constant="10" id="dxg-nU-8uC"/>
+                            <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="xfA-fL-v24" secondAttribute="trailing" constant="10" id="ije-GF-w3f"/>
+                            <constraint firstItem="xfA-fL-v24" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" constant="10" id="sqw-Ye-yb2"/>
+                            <constraint firstItem="PgO-Te-wW0" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" constant="10" id="vn9-GX-ab2"/>
+                            <constraint firstItem="PgO-Te-wW0" firstAttribute="top" secondItem="xfA-fL-v24" secondAttribute="bottom" constant="12" id="zPX-dd-1y2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KLd-rX-miS">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="56V-v6-SVc">
