@@ -213,7 +213,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="nnf-7D-Svv">
-                                <rect key="frame" x="218" y="184" width="200" height="116.66666666666669"/>
+                                <rect key="frame" x="218" y="194" width="200" height="117.33333333333331"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKm-kP-Q3D" customClass="CosmosView" customModule="Cosmos">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
@@ -228,14 +228,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jjc-D5-YbW">
-                                        <rect key="frame" x="0.0" y="53" width="200" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="53" width="200" height="20.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-lj-q54">
-                                        <rect key="frame" x="0.0" y="96.333333333333314" width="200" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="96.666666666666686" width="200" height="20.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -248,17 +248,29 @@
                                     <constraint firstAttribute="height" constant="60" id="1e2-23-iZo"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tIH-eE-cR7">
+                                <rect key="frame" x="0.0" y="439" width="428" height="453"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zAC-m1-h4J" id="tLl-Tx-Zbo"/>
+                                    <outlet property="delegate" destination="zAC-m1-h4J" id="l4g-M0-A3N"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qif-0k-3yp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yIm-wx-0TX" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" id="25e-rT-eRd"/>
                             <constraint firstItem="yIm-wx-0TX" firstAttribute="top" secondItem="PgO-Te-wW0" secondAttribute="bottom" constant="8" symbolic="YES" id="349-JP-9pH"/>
-                            <constraint firstItem="nnf-7D-Svv" firstAttribute="top" secondItem="xfA-fL-v24" secondAttribute="bottom" constant="30" id="KT1-dj-3Px"/>
+                            <constraint firstItem="nnf-7D-Svv" firstAttribute="top" secondItem="xfA-fL-v24" secondAttribute="bottom" constant="40" id="KT1-dj-3Px"/>
                             <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="nnf-7D-Svv" secondAttribute="trailing" constant="10" id="X8k-rU-s8o"/>
                             <constraint firstItem="xfA-fL-v24" firstAttribute="top" secondItem="Qif-0k-3yp" secondAttribute="top" constant="10" id="aZi-xu-gwv"/>
                             <constraint firstItem="xfA-fL-v24" firstAttribute="top" secondItem="Qif-0k-3yp" secondAttribute="top" constant="10" id="dxg-nU-8uC"/>
+                            <constraint firstItem="Qif-0k-3yp" firstAttribute="bottom" secondItem="tIH-eE-cR7" secondAttribute="bottom" id="egZ-Rx-8Id"/>
+                            <constraint firstItem="tIH-eE-cR7" firstAttribute="top" secondItem="yIm-wx-0TX" secondAttribute="bottom" constant="5" id="hWI-Bt-U7v"/>
+                            <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="tIH-eE-cR7" secondAttribute="trailing" id="hn5-yr-pBn"/>
                             <constraint firstItem="Qif-0k-3yp" firstAttribute="trailing" secondItem="xfA-fL-v24" secondAttribute="trailing" constant="10" id="ije-GF-w3f"/>
+                            <constraint firstItem="tIH-eE-cR7" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" id="nwI-HW-aNR"/>
                             <constraint firstItem="xfA-fL-v24" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" constant="10" id="sqw-Ye-yb2"/>
                             <constraint firstItem="yIm-wx-0TX" firstAttribute="trailing" secondItem="Qif-0k-3yp" secondAttribute="trailing" id="u9a-l1-NPf"/>
                             <constraint firstItem="PgO-Te-wW0" firstAttribute="leading" secondItem="Qif-0k-3yp" secondAttribute="leading" constant="10" id="vn9-GX-ab2"/>
@@ -277,6 +289,7 @@
                     <connections>
                         <outlet property="pieChartView" destination="PgO-Te-wW0" id="WdQ-oe-0nT"/>
                         <outlet property="segmentioView" destination="yIm-wx-0TX" id="peN-dX-djP"/>
+                        <outlet property="tableView" destination="tIH-eE-cR7" id="Onb-uZ-KLP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pm-4c-BYX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,32 +9,177 @@ import UIKit
 import Charts
 import Segmentio
 
-class DashboardViewController: UIViewController {
+final class DashboardViewController: UIViewController {
+    
+    enum DashboardType:String, CaseIterable{
+        case leaderboard = "Leaderboard"
+        case upcomingAppointment = "Upcoming Appointment"
+        case dailyChallenge = "Todo List"
+        case todoList = "Staff Feed"
+        case staffFeed = "Daily Challenge"
+    }
     
     @IBOutlet var pieChartView: PieChartView!
-    let players = ["Ozil", "Ramsey", "Laca"]
-    let goals = [6, 8, 26]
+    @IBOutlet var tableView: UITableView!
     @IBOutlet weak var segmentioView: Segmentio!
+    
+    var dashBoardList: [String]{
+        
+        switch dashboardType{
+        case .leaderboard:
+         return [
+            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
+            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
+            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
+            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
+            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
+            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
+            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
+            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd"
+            ]
+        case .upcomingAppointment:
+            return [
+               "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
+                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment"
+               ]
+        case .dailyChallenge:
+            return [
+               "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
+                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
+                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
+                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
+                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
+                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
+                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
+                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
+                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge"
+               ]
+        case .todoList:
+            return [
+               "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList",
+                "todoList todoList todoList todoList"
+               ]
+        case .staffFeed:
+            return [
+               "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed",
+                "staffFeed staffFeed staffFeed staffFeed"
+               ]
+
+        }
+    }
+    var dashboardType: DashboardType = .leaderboard
+    var sections: [DashboardType] = DashboardType.allCases
     var content = [SegmentioItem]()
     
-
-
+    let players = ["Ozil", "Ramsey", "Laca"]
+    let goals = [10, 20, 70]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Dashboard"
-        pieChartView.drawHoleEnabled = false
-        customizeChart(dataPoints: players, values: goals.map{ Double($0) })
-        segmentioView.selectedSegmentioIndex = 0
-        segmentioView.valueDidChange = { segmentio, segmentIndex in
-            print("Selected item: ", segmentIndex)
-        }
-        
+        loadPieChart()
         loadSlidingTabControl()
-
-        // Do any additional setup after loading the view.
     }
     
+}
+
+extension DashboardViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension DashboardViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = dashBoardList[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        dashBoardList.count
+    }
+    
+}
+
+extension DashboardViewController {
+    func customizeChart(dataPoints: [String], values: [Double]) {
+      
+      // 1. Set ChartDataEntry
+      var dataEntries: [ChartDataEntry] = []
+      for i in 0..<dataPoints.count {
+        let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
+        dataEntries.append(dataEntry)
+      }
+      // 2. Set ChartDataSet
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
+      pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
+      // 3. Set ChartData
+      let pieChartData = PieChartData(dataSet: pieChartDataSet)
+
+      
+      let format = NumberFormatter()
+      format.numberStyle = .none
+      let formatter = DefaultValueFormatter(formatter: format)
+      pieChartData.setValueFormatter(formatter)
+      // 4. Assign it to the chart’s data
+      pieChartView.data = pieChartData
+    }
+        
+        private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
+          var colors: [UIColor] = []
+          for _ in 0..<numbersOfColor {
+            let red = Double(arc4random_uniform(256))
+            let green = Double(arc4random_uniform(256))
+            let blue = Double(arc4random_uniform(256))
+            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+            colors.append(color)
+          }
+          return colors
+
+        }
+}
+
+extension DashboardViewController {
+    
     func loadSlidingTabControl(){
+        
+        segmentioView.selectedSegmentioIndex = 0
+        segmentioView.valueDidChange = {[weak self] segmentio, segmentIndex in
+            guard let self = self else {
+                return
+            }
+            self.dashboardType = self.sections[segmentIndex]
+            self.tableView.reloadData()
+        }
         
         content =   [
          SegmentioItem(
@@ -60,47 +205,15 @@ class DashboardViewController: UIViewController {
         ]
         segmentioView.setup(content: content, style: .onlyLabel, options: nil)
     }
-    
-    func customizeChart(dataPoints: [String], values: [Double]) {
-      
-      // 1. Set ChartDataEntry
-      var dataEntries: [ChartDataEntry] = []
-      for i in 0..<dataPoints.count {
-        let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
-        dataEntries.append(dataEntry)
-      }
-      // 2. Set ChartDataSet
-        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-      pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
-      // 3. Set ChartData
-      let pieChartData = PieChartData(dataSet: pieChartDataSet)
-      let format = NumberFormatter()
-      format.numberStyle = .none
-      let formatter = DefaultValueFormatter(formatter: format)
-      pieChartData.setValueFormatter(formatter)
-      // 4. Assign it to the chart’s data
-      pieChartView.data = pieChartData
-    }
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+extension DashboardViewController {
+    func loadPieChart(){
+        pieChartView.drawHoleEnabled = false
+        customizeChart(dataPoints: players, values: goals.map{ Double($0) })
         
-        private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
-          var colors: [UIColor] = []
-          for _ in 0..<numbersOfColor {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-          }
-          return colors
-
-        }
+        //      pieChartView.legend.orientation = .vertical
+        //      pieChartView.legend.verticalAlignment = .top
+        pieChartView.legend.enabled = false
+    }
 }
