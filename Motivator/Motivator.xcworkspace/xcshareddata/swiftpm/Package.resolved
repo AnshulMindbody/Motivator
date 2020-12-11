@@ -20,12 +20,30 @@
         }
       },
       {
+        "package": "QuickLayout",
+        "repositoryURL": "https://github.com/huri000/QuickLayout",
+        "state": {
+          "branch": null,
+          "revision": "6be62decbe508d8fc8f9dbafc349d05bab03c38b",
+          "version": "3.0.1"
+        }
+      },
+      {
         "package": "SideMenu",
         "repositoryURL": "https://github.com/jonkykong/SideMenu.git",
         "state": {
           "branch": null,
           "revision": "8bd4fd128923cf5494fa726839af8afe12908ad9",
           "version": "6.5.0"
+        }
+      },
+      {
+        "package": "SwiftEntryKit",
+        "repositoryURL": "https://github.com/huri000/SwiftEntryKit",
+        "state": {
+          "branch": null,
+          "revision": "f280a02c60f4c2563561312df26a357a1cf714e2",
+          "version": "1.2.6"
         }
       }
     ]

@@ -8,6 +8,8 @@
 import UIKit
 import Charts
 import Segmentio
+import SwiftEntryKit
+
 
 final class DashboardViewController: UIViewController, UITextFieldDelegate {
     
@@ -106,6 +108,7 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Dashboard"
+        loadWelcomeMessage()
         loadPieChart()
         loadSlidingTabControl()
     }
@@ -262,5 +265,27 @@ extension DashboardViewController {
             print("")
         
         }
+    }
+    
+    func loadWelcomeMessage(){
+        // Generate top floating entry and set some properties
+        var attributes = EKAttributes.topFloat
+        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.red), EKColor(.green)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
+        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.width), height: .intrinsic)
+        attributes.position = .center
+
+        let title = EKProperty.LabelContent(text: "Welcome User", style: .init(font: UIFont.boldSystemFont(ofSize: 17), color: .black))
+        let description = EKProperty.LabelContent(text: "Welcome to the app", style: .init(font: UIFont.systemFont(ofSize: 14.0), color: .black))
+//        let image = EKProperty.ImageContent(image: UIImage(named: imageName)!, size: CGSize(width: 35, height: 35))
+        let simpleMessage = EKSimpleMessage(image: nil, title: title, description: description)
+        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
+
+        let contentView = EKNotificationMessageView(with: notificationMessage)
+        SwiftEntryKit.display(entry: contentView, using: attributes)
+
     }
 }
