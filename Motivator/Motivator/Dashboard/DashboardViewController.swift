@@ -31,67 +31,54 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var floatingButton: UIButton!
     
     var dashBoardList: [String] {
-        
-        switch dashboardType{
-        case .leaderboard:
-            floatingButton.isHidden = true
-            self.tableView.register(UINib(nibName: "LeaderboardTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaderboardTableViewCell")
-         return [
-            "Neil DOwn is at Level 27 with 789 score",
-            "Allie Grater is at Level 23 with 699 score",
-            "Pat Thett is at Level 23 with 600 score",
-            ]
-        case .upcomingAppointment:
-            floatingButton.isHidden = true
-            return [
-               "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment",
-                "upcomingAppointment upcomingAppointment upcomingAppointment upcomingAppointment"
-               ]
-        case .dailyChallenge:
-            floatingButton.isHidden = false
-            return [
-               "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
-                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
-                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
-                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
-                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
-                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
-                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
-                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge",
-                "dailyChallenge dailyChallenge dailyChallenge dailyChallenge"
-               ]
-        case .todoList:
-            floatingButton.isHidden = false
-            return todoList
-        case .staffFeed:
-            floatingButton.isHidden = true
-            return [
-               "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed",
-                "staffFeed staffFeed staffFeed staffFeed"
-               ]
-
+            
+            switch dashboardType{
+            case .leaderboard:
+                floatingButton.isHidden = true
+                self.tableView.register(UINib(nibName: "LeaderboardTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaderboardTableViewCell")
+             return [
+                "Neil Down is at Level 27 with 789 score",
+                "Allie Grater is at Level 23 with 699 score",
+                "Pat Thett is at Level 23 with 600 score",
+                ]
+            case .upcomingAppointment:
+                floatingButton.isHidden = true
+                return [
+                   "Hair styling - Mrs. Maureen  at 10.00am",
+                    "Manipure & Pedicure - Ms. Simon Sais at 11.30pm",
+                    "Head massage - Ms. Elly at 01.30pm",
+                    "Facial - Ms. Stanley Knife at 3:00pm",
+                    "Keratin treatment - Mrs. Emma Grate at 5:00pm",
+                   ]
+            case .dailyChallenge:
+                floatingButton.isHidden = false
+                return [
+                   "You have been challenged by Pat Thettick to sell 3 products.",
+                    "Accepting the challenge will earn you 5 points and completing it will earn you 20 points.",
+                    "Stan Dupp has accepted your challenge and that earned him 5 points.",
+                    "You challenged Stan Dupp to complete 6 services.",
+                   ]
+            case .todoList:
+                floatingButton.isHidden = false
+                return todoList
+            case .staffFeed:
+                floatingButton.isHidden = true
+                return staffFeedList
+            }
         }
-    }
+
     
-    var todoList = [String]()
+    var todoList: [String] = [
+        "Complete 5 services.",
+        "Clean your service station after every service.",
+        "Sell at least 2 products.",
+        "Upsell at least 2 services."
+    ]
+    var staffFeedList = [
+        "Stan Dupp posted 2 hours ago - I have made a sell of 5 products today.",
+        "Mark Ateer posted 4 hours ago - Feelings fresh on a Monday morning,"
+    ]
+
     var proofileImages = ["profile1", "profile2", "profile3"]
     var rankImages = ["rank1", "rank2", "rank3"]
     
@@ -99,8 +86,8 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     var sections: [DashboardType] = DashboardType.allCases
     var content = [SegmentioItem]()
     
-    let players = ["Leo", "Ruchi", "Anshul"]
-    let goals = [10, 20, 70]
+    let players = ["Daily Challenges", "To Do"]
+    let goals = [55, 45]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,7 +124,7 @@ extension DashboardViewController: UITableViewDataSource {
             return cell
   
         case .todoList:
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: "todoListCell") as! TodoListTableViewCell
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text = dashBoardList[indexPath.row]
             return cell            
@@ -248,7 +235,7 @@ extension DashboardViewController {
 
 extension DashboardViewController {
     func loadPieChart(){
-        pieChartView.drawHoleEnabled = false
+//        pieChartView.drawHoleEnabled = false
         customizeChart(dataPoints: players, values: goals.map{ Double($0) })
         
         //      pieChartView.legend.orientation = .vertical
