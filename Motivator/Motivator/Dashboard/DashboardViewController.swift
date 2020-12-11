@@ -128,10 +128,20 @@ extension DashboardViewController: UITableViewDelegate {
 
 extension DashboardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = dashBoardList[indexPath.row]
-        return cell
+        
+        switch dashboardType {
+        
+        case .leaderboard, .upcomingAppointment, .dailyChallenge, .staffFeed:
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text = dashBoardList[indexPath.row]
+            return cell
+  
+        case .todoList:
+            
+            
+      
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -226,5 +236,14 @@ extension DashboardViewController {
         //      pieChartView.legend.orientation = .vertical
         //      pieChartView.legend.verticalAlignment = .top
         pieChartView.legend.enabled = false
+    }
+    
+    @IBAction func floatingButtonClicked(){
+        switch dashboardType {
+        case .todoList:
+            print("to to clicked)
+        case .default: ()
+            
+        }
     }
 }
