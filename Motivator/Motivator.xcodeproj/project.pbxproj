@@ -20,6 +20,8 @@
 		872319EB2581FA5A00AECA57 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 872319EA2581FA5A00AECA57 /* SideMenu */; };
 		872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319ED2582012C00AECA57 /* SideMenuViewController.swift */; };
 		872319F22582058F00AECA57 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 872319F12582058F00AECA57 /* Cosmos */; };
+		D3096ADB258335F7006EB685 /* TodoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3096AD9258335F7006EB685 /* TodoListTableViewCell.swift */; };
+		D3096ADC258335F7006EB685 /* TodoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3096ADA258335F7006EB685 /* TodoListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +51,8 @@
 		872319ED2582012C00AECA57 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		98764932EAF3CFE18B223BD8 /* Pods_Motivator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motivator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2571460B8DC99F8218C1E33 /* Pods-Motivator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.release.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.release.xcconfig"; sourceTree = "<group>"; };
+		D3096AD9258335F7006EB685 /* TodoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewCell.swift; sourceTree = "<group>"; };
+		D3096ADA258335F7006EB685 /* TodoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListTableViewCell.xib; sourceTree = "<group>"; };
 		F097CAC9A2CBF9F8903DE0ED /* Pods-Motivator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.debug.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				872319E22581F5B500AECA57 /* TodoListViewController.swift */,
+				D3096AD9258335F7006EB685 /* TodoListTableViewCell.swift */,
+				D3096ADA258335F7006EB685 /* TodoListTableViewCell.xib */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				872319C32581EB6000AECA57 /* LaunchScreen.storyboard in Resources */,
 				872319C02581EB6000AECA57 /* Assets.xcassets in Resources */,
 				872319BE2581EB5E00AECA57 /* Main.storyboard in Resources */,
+				D3096ADC258335F7006EB685 /* TodoListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +325,7 @@
 			files = (
 				872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */,
 				872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */,
+				D3096ADB258335F7006EB685 /* TodoListTableViewCell.swift in Sources */,
 				872319DF2581F56400AECA57 /* DashboardViewController.swift in Sources */,
 				872319E72581F74400AECA57 /* LoginViewController.swift in Sources */,
 				872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */,
@@ -398,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -453,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

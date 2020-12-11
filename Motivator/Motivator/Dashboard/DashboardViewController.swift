@@ -9,7 +9,7 @@ import UIKit
 import Charts
 import Segmentio
 
-final class DashboardViewController: UIViewController {
+final class DashboardViewController: UIViewController, UITextFieldDelegate {
     
     enum DashboardType:String, CaseIterable{
         case leaderboard = "Leaderboard"
@@ -72,19 +72,7 @@ final class DashboardViewController: UIViewController {
                ]
         case .todoList:
             floatingButton.isHidden = false
-            return [
-               "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList",
-                "todoList todoList todoList todoList"
-               ]
+            return todoList
         case .staffFeed:
             floatingButton.isHidden = true
             return [
@@ -104,6 +92,10 @@ final class DashboardViewController: UIViewController {
 
         }
     }
+    
+    var todoList = [String]()
+    
+    
     var dashboardType: DashboardType = .leaderboard
     var sections: [DashboardType] = DashboardType.allCases
     var content = [SegmentioItem]()
@@ -138,8 +130,10 @@ extension DashboardViewController: UITableViewDataSource {
             return cell
   
         case .todoList:
-            
-            
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "todoListCell")
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.text = dashBoardList[indexPath.row]
+            return cell            
       
         }
     }
@@ -241,9 +235,32 @@ extension DashboardViewController {
     @IBAction func floatingButtonClicked(){
         switch dashboardType {
         case .todoList:
-            print("to to clicked)
-        case .default: ()
+            print("to do clicked")
+            let alertController = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
+//            alertController.addTextField { (textField) -> Void in
+//                searchTextField = textField
+//                searchTextField?.delegate = self //REQUIRED
+//                searchTextField?.placeholder = "Enter your task"
+//            }
+            alertController.addTextField { (textField : UITextField!) -> Void in
+                textField.placeholder = "Enter new task"
+            }
+            let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
+                let textField = alertController.textFields![0] as UITextField
+                self.todoList.append(textField.text!)
+                self.tableView.reloadData()
+            })
+
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+
+            alertController.addAction(saveAction)
+            alertController.addAction(cancelAction)
+
+            self.present(alertController, animated: true, completion: nil)
             
+        case .leaderboard, .upcomingAppointment, .dailyChallenge, .staffFeed:
+            print("")
+        
         }
     }
 }
