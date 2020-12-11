@@ -30,20 +30,16 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var segmentioView: Segmentio!
     @IBOutlet var floatingButton: UIButton!
     
-    var dashBoardList: [String]{
+    var dashBoardList: [String] {
         
         switch dashboardType{
         case .leaderboard:
             floatingButton.isHidden = true
+            self.tableView.register(UINib(nibName: "LeaderboardTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaderboardTableViewCell")
          return [
-            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
-            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
-            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
-            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
-            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
-            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
-            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd",
-            "jkgdgf lkgfkd fgdofgfg fghjfdg gfd fgdl gfdhgfd"
+            "Neil DOwn is at Level 27 with 789 score",
+            "Allie Grater is at Level 23 with 699 score",
+            "Pat Thett is at Level 23 with 600 score",
             ]
         case .upcomingAppointment:
             floatingButton.isHidden = true
@@ -96,7 +92,8 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     }
     
     var todoList = [String]()
-    
+    var proofileImages = ["profile1", "profile2", "profile3"]
+    var rankImages = ["rank1", "rank2", "rank3"]
     
     var dashboardType: DashboardType = .leaderboard
     var sections: [DashboardType] = DashboardType.allCases
@@ -126,14 +123,21 @@ extension DashboardViewController: UITableViewDataSource {
         
         switch dashboardType {
         
-        case .leaderboard, .upcomingAppointment, .dailyChallenge, .staffFeed:
+        case .upcomingAppointment, .dailyChallenge, .staffFeed:
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text = dashBoardList[indexPath.row]
             return cell
+        case .leaderboard:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderboardTableViewCell") as! LeaderboardTableViewCell//UITableViewCell(style: .value1, reuseIdentifier: "LeaderboardTableViewCell") as! LeaderboardTableViewCell
+            cell.nameLabel?.numberOfLines = 0
+            cell.nameLabel?.text = dashBoardList[indexPath.row]
+            cell.profileImageview.image = UIImage(named: proofileImages[indexPath.row])
+            cell.rankImageview.image = UIImage(named: rankImages[indexPath.row])
+            return cell
   
         case .todoList:
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: "todoListCell")
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "todoListCell") as! TodoListTableViewCell
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text = dashBoardList[indexPath.row]
             return cell            
@@ -143,6 +147,23 @@ extension DashboardViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dashBoardList.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch dashboardType {
+            
+        case .leaderboard:
+            return 62
+        case .upcomingAppointment:
+            return 50
+        case .dailyChallenge:
+            return 50
+        case .todoList:
+            return 50
+        case .staffFeed:
+            return 50
+        }
     }
     
 }
