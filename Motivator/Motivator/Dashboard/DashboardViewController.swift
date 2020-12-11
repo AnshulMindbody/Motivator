@@ -96,8 +96,6 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     }
     
     var todoList = [String]()
-    
-    
     var dashboardType: DashboardType = .leaderboard
     var sections: [DashboardType] = DashboardType.allCases
     var content = [SegmentioItem]()
@@ -238,34 +236,64 @@ extension DashboardViewController {
     @IBAction func floatingButtonClicked(){
         switch dashboardType {
         case .todoList:
-            print("to do clicked")
-            let alertController = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
-//            alertController.addTextField { (textField) -> Void in
-//                searchTextField = textField
-//                searchTextField?.delegate = self //REQUIRED
-//                searchTextField?.placeholder = "Enter your task"
-//            }
-            alertController.addTextField { (textField : UITextField!) -> Void in
-                textField.placeholder = "Enter new task"
-            }
-            let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
-                let textField = alertController.textFields![0] as UITextField
-                self.todoList.append(textField.text!)
-                self.tableView.reloadData()
-            })
-
-            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
-
-            alertController.addAction(saveAction)
-            alertController.addAction(cancelAction)
-
-            self.present(alertController, animated: true, completion: nil)
-            
-        case .leaderboard, .upcomingAppointment, .dailyChallenge, .staffFeed:
+            showToDoListAlert()
+        case .dailyChallenge:
+            showDailyChallenge()
+        case .leaderboard, .upcomingAppointment, .staffFeed:
             print("")
         
         }
     }
+    
+    func showToDoListAlert(){
+        print("to do clicked")
+        let alertController = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter new task"
+        }
+        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
+            let textField = alertController.textFields![0] as UITextField
+            self.todoList.append(textField.text!)
+            self.tableView.reloadData()
+        })
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showDailyChallenge(){
+//        print("to do clicked")
+//        let alertController = UIAlertController(title: "Add new challenge", message: "", preferredStyle: .alert)
+//        
+//        alertController.addTextField { (textField : UITextField!) -> Void in
+//            textField.placeholder = "Staff ID"
+//        }
+//        
+//        alertController.addTextField { (textField : UITextField!) -> Void in
+//            textField.placeholder = "Enter new challenge"
+//        }
+//        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
+//            if let textFieldID = alertController.textFields?[0] as? UITextField,
+//               let textFielChallenge = alertController.textFields?[1] as? UITextField,
+//               let staffID = textFieldID.text?.isEmpty,
+//               let staffName = textFielChallenge.text?.isEmpty else {
+//          //  self.todoList.append(textField.text!)
+//            self.tableView.reloadData()
+//            }
+//        })
+//
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+//
+//        alertController.addAction(saveAction)
+//        alertController.addAction(cancelAction)
+//
+//        self.present(alertController, animated: true, completion: nil)
+    }
+
     
     func loadWelcomeMessage(){
         // Generate top floating entry and set some properties
@@ -279,7 +307,7 @@ extension DashboardViewController {
         attributes.position = .center
 
         let title = EKProperty.LabelContent(text: "Welcome User", style: .init(font: UIFont.boldSystemFont(ofSize: 17), color: .black))
-        let description = EKProperty.LabelContent(text: "Welcome to the app", style: .init(font: UIFont.systemFont(ofSize: 14.0), color: .black))
+        let description = EKProperty.LabelContent(text: "Check the latest updates here!!!", style: .init(font: UIFont.systemFont(ofSize: 14.0), color: .black))
 //        let image = EKProperty.ImageContent(image: UIImage(named: imageName)!, size: CGSize(width: 35, height: 35))
         let simpleMessage = EKSimpleMessage(image: nil, title: title, description: description)
         let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
