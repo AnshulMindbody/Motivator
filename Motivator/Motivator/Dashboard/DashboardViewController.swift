@@ -11,24 +11,51 @@ import Segmentio
 import SwiftEntryKit
 import SocketIO
 
-//struct DashBoardModel {
-//    let image: UIImage
-//    let selected = false
-//    let name: String
-//    let showSelection = false
-//}
+
+protocol DashboardViewType {
+    var type:DashboardType { get set}
+    var name: String { get set}
+
+}
+
+struct LeaderBaord: DashboardViewType {
+    var type: DashboardType = .leaderboard
+    let score: String
+    let level: String
+    var name: String
+    var image: UIImage
+}
+
+struct UpcomingAppointments: DashboardViewType {
+    var type: DashboardType = .upcomingAppointment
+    var name: String
+}
+
+struct ToDo: DashboardViewType {
+    var type: DashboardType = .todoList
+    var name: String
+    let completed: Bool = false
+}
+
+struct DailyChallenge: DashboardViewType {
+    var type: DashboardType = .dailyChallenge
+    var name: String
+    var accepted = false
+    var completed = false
+    var rejected = false
+}
+
+enum DashboardType:String, CaseIterable{
+    case leaderboard = "Leaderboard"
+    case upcomingAppointment = "Upcoming Appointment"
+    case dailyChallenge = "Todo List"
+    case todoList = "Staff Feed"
+}
 
 
 final class DashboardViewController: UIViewController, UITextFieldDelegate {
     
-    enum DashboardType:String, CaseIterable{
-        case leaderboard = "Leaderboard"
-        case upcomingAppointment = "Upcoming Appointment"
-        case dailyChallenge = "Todo List"
-        case todoList = "Staff Feed"
-        case staffFeed = "Daily Challenge"
-    }
-    
+  
     @IBOutlet var pieChartView: PieChartView!
     @IBOutlet var tableView: UITableView! {
         didSet {
@@ -46,25 +73,25 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     }
     let manager = SocketManager(socketURL: URL(string: "http://localhost:3000")!, config: [.log(true), .compress, .connectParams(["username": "Anshulsd jain"])])
     
-    var dashBoardList: [String] {
+    var dashBoardList: [DashboardViewType] {
         
         switch dashboardType{
         case .leaderboard:
             floatingButton.isHidden = true
             self.tableView.register(UINib(nibName: "LeaderboardTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaderboardTableViewCell")
             return [
-                "Neil Down is at Level 27 with 789 score",
-                "Allie Grater is at Level 23 with 699 score",
-                "Pat Thett is at Level 23 with 600 score",
+                LeaderBaord(score: "130", level:"30", name: "Leo",image: UIImage(named: "profile1")!),
+                LeaderBaord(score:  "129", level:"29", name: "Anette",image: UIImage(named: "profile2")!),
+                LeaderBaord(score: "128", level:"28", name: "Ravi",image: UIImage(named: "profile3")!)
             ]
         case .upcomingAppointment:
             floatingButton.isHidden = true
             return [
-                "Hair styling - Mrs. Maureen  at 10.00am",
-                "Manipure & Pedicure - Ms. Simon Sais at 11.30pm",
-                "Head massage - Ms. Elly at 01.30pm",
-                "Facial - Ms. Stanley Knife at 3:00pm",
-                "Keratin treatment - Mrs. Emma Grate at 5:00pm",
+                UpcomingAppointments(name: "Hair styling - Mrs. Maureen  at 10.00am"),
+                UpcomingAppointments(name: "Manipure & Pedicure - Ms. Simon Sais at 11.30pm"),
+                UpcomingAppointments(name: "Head massage - Ms. Elly at 01.30pm"),
+                UpcomingAppointments(name: "Facial - Ms. Stanley Knife at 3:00pm"),
+                UpcomingAppointments(name: "Keratin treatment - Mrs. Emma Grate at 5:00pm")
             ]
         case .dailyChallenge:
             floatingButton.isHidden = false
@@ -72,17 +99,17 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
         case .todoList:
             floatingButton.isHidden = false
             return todoList
-        case .staffFeed:
-            floatingButton.isHidden = true
-            return staffFeedList
+//        case .staffFeed:
+//            floatingButton.isHidden = true
+//            return staffFeedList
         }
     }
     
-    var todoList: [String] = [
-        "Complete 5 services.",
-        "Clean your service station after every service.",
-        "Sell at least 2 products.",
-        "Upsell at least 2 services."
+    var todoList: [ToDo] = [
+        ToDo(name: "Complete 5 services."),
+        ToDo(name: "Clean your service station after every service."),
+        ToDo(name: "Sell at least 2 products."),
+        ToDo(name: "Upsell at least 2 services.")
     ]
     var todoCompletedFlagList: [Bool] = [true, false, false, true]
     
@@ -92,13 +119,12 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     ]
     
     var dailyChallenge = [
-        "You have been challenged by Pat Thettick to sell 3 products.",
-        "Accepting the challenge will earn you 5 points and completing it will earn you 20 points.",
-        "Stan Dupp has accepted your challenge and that earned him 5 points.",
-        "You challenged Stan Dupp to complete 6 services.",
+        DailyChallenge(name: "You have been challenged by Pat Thettick to sell 3 products."),
+        DailyChallenge(name: "Accepting the challenge will earn you 5 points and completing it will earn you 20 points."),
+        DailyChallenge(name: "Stan Dupp has accepted your challenge and that earned him 5 points."),
+        DailyChallenge(name: "You challenged Stan Dupp to complete 6 services.")
     ]
     
-    var proofileImages = ["profile1", "profile2", "profile3"]
     var rankImages = ["rank1", "rank2", "rank3"]
     
     var dashboardType: DashboardType = .leaderboard
@@ -141,24 +167,26 @@ extension DashboardViewController: UITableViewDataSource {
         
         switch dashboardType {
         
-        case .upcomingAppointment, .dailyChallenge, .staffFeed:
+        case .upcomingAppointment, .dailyChallenge:
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
             cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.text = dashBoardList[indexPath.row]
+            cell.textLabel?.text = dashBoardList[indexPath.row].name
             return cell
         case .leaderboard:
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderboardTableViewCell") as! LeaderboardTableViewCell//UITableViewCell(style: .value1, reuseIdentifier: "LeaderboardTableViewCell") as! LeaderboardTableViewCell
+            let leaderBaordModel = dashBoardList[indexPath.row] as! LeaderBaord
             cell.nameLabel?.numberOfLines = 0
-            cell.nameLabel?.text = dashBoardList[indexPath.row]
-            cell.profileImageview.image = UIImage(named: proofileImages[indexPath.row])
+            cell.nameLabel?.text = leaderBaordModel.name
+            cell.profileImageview.image = leaderBaordModel.image
             cell.rankImageview.image = UIImage(named: rankImages[indexPath.row])
             return cell
             
         case .todoList:
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
             cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.text = dashBoardList[indexPath.row]
-            cell.accessoryType = todoCompletedFlagList[indexPath.row] ? .checkmark : .none
+            let todoModel = dashBoardList[indexPath.row] as! ToDo
+            cell.textLabel?.text = todoModel.name
+            cell.accessoryType = todoModel.completed ? .checkmark : .none
             return cell
         }
     }
@@ -177,8 +205,6 @@ extension DashboardViewController: UITableViewDataSource {
         case .dailyChallenge:
             return 50
         case .todoList:
-            return 50
-        case .staffFeed:
             return 50
         }
     }
@@ -262,11 +288,7 @@ extension DashboardViewController {
             SegmentioItem(
                 title: "Todo List",
                 image: nil
-            ),
-            SegmentioItem(
-                title: "Staff Feed",
-                image: nil
-            ),
+            )
         ]
         segmentioView.setup(content: content, style: .onlyLabel, options: nil)
     }
@@ -280,7 +302,7 @@ extension DashboardViewController {
             showToDoListAlert()
         case .dailyChallenge:
             addDailyChallenge()
-        case .leaderboard, .upcomingAppointment, .staffFeed:
+        case .leaderboard, .upcomingAppointment:
             print("")
             
         }
@@ -321,7 +343,7 @@ extension DashboardViewController {
             if let username = dataDict[0]["username"],
                let message  = dataDict[0]["message"] {
                 let message = (username + " challenged " + message)
-                self.dailyChallenge.insert(message, at: 0)
+                self.dailyChallenge.insert(DailyChallenge(name: message), at: 0)
                 showDailyChallengeAlert(dailyChallenge: message)
                 DispatchQueue.main.async {
                     tableView.reloadData()
@@ -377,6 +399,7 @@ extension DashboardViewController {
 }
 
 extension DashboardViewController{
+    
     func showAnimatedAltert(message:String){
         // Generate top floating entry and set some properties
         var attributes = EKAttributes.topFloat
@@ -400,14 +423,13 @@ extension DashboardViewController{
     }
     
     func showToDoListAlert(){
-        print("to do clicked")
         let alertController = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter new task"
         }
         let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
             let textField = alertController.textFields![0] as UITextField
-            self.todoList.append(textField.text!)
+            self.todoList.append(ToDo(name: textField.text!))
             self.todoCompletedFlagList.append(false)
             self.tableView.reloadData()
         })
@@ -428,9 +450,14 @@ extension DashboardViewController{
             self.manager.defaultSocket.emit("challengeAccepted", "OK")
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+        let rejectAction = UIAlertAction(title: "Reject", style: .default) { _ in
+            self.manager.defaultSocket.emit("challengeAccepted", "OK")
+        }
+        
+        let cancelAction = UIAlertAction(title: "Later", style: .default, handler: nil )
         
         alertController.addAction(saveAction)
+        alertController.addAction(rejectAction)
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
@@ -440,13 +467,16 @@ extension DashboardViewController{
         print("to do clicked")
         let alertController = UIAlertController(title: "Add new challenge", message: "", preferredStyle: .alert)
         alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Tag your colleague"
+        }
+        alertController.addTextField { (textField : UITextField!) -> Void in
             textField.placeholder = "Enter new challenge"
         }
         
-        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
-            let textField = alertController.textFields![0] as UITextField
+        let saveAction = UIAlertAction(title: "Challenge", style: .default, handler: { alert -> Void in
+            let textField = alertController.textFields![1] as UITextField
             self.manager.defaultSocket.emit("challenge", textField.text!)
-            self.dailyChallenge.insert(("You challenge " + textField.text!), at: 0)
+            self.dailyChallenge.insert(DailyChallenge(name: ("You challenge " + textField.text!)), at: 0)
             self.tableView.reloadData()
         })
         
