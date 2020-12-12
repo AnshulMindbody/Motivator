@@ -11,6 +11,13 @@ import Segmentio
 import SwiftEntryKit
 import SocketIO
 
+//struct DashBoardModel {
+//    let image: UIImage
+//    let selected = false
+//    let name: String
+//    let showSelection = false
+//}
+
 
 final class DashboardViewController: UIViewController, UITextFieldDelegate {
     
