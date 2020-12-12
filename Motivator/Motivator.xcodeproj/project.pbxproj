@@ -26,6 +26,9 @@
 		D3096ADC258335F7006EB685 /* TodoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3096ADA258335F7006EB685 /* TodoListTableViewCell.xib */; };
 		D3096AE72583619B006EB685 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3096AE52583619B006EB685 /* LeaderboardTableViewCell.swift */; };
 		D3096AE82583619B006EB685 /* LeaderboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3096AE62583619B006EB685 /* LeaderboardTableViewCell.xib */; };
+		D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8432584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift */; };
+		D3CEC8462584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8442584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib */; };
+		D3CEC8482584DD090095D08F /* StaffFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +62,9 @@
 		D3096ADA258335F7006EB685 /* TodoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListTableViewCell.xib; sourceTree = "<group>"; };
 		D3096AE52583619B006EB685 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		D3096AE62583619B006EB685 /* LeaderboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTableViewCell.xib; sourceTree = "<group>"; };
+		D3CEC8432584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		D3CEC8442584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingAppointmentTableViewCell.xib; sourceTree = "<group>"; };
+		D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFeedViewController.swift; sourceTree = "<group>"; };
 		F097CAC9A2CBF9F8903DE0ED /* Pods-Motivator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.debug.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +163,8 @@
 		872319D72581F4BE00AECA57 /* Upcoming Appointment */ = {
 			isa = PBXGroup;
 			children = (
+				D3CEC8432584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift */,
+				D3CEC8442584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib */,
 			);
 			path = "Upcoming Appointment";
 			sourceTree = "<group>";
@@ -180,6 +188,7 @@
 		872319DA2581F4F500AECA57 /* Staff Feed */ = {
 			isa = PBXGroup;
 			children = (
+				D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */,
 			);
 			path = "Staff Feed";
 			sourceTree = "<group>";
@@ -284,6 +293,7 @@
 				872319C32581EB6000AECA57 /* LaunchScreen.storyboard in Resources */,
 				872319C02581EB6000AECA57 /* Assets.xcassets in Resources */,
 				872319BE2581EB5E00AECA57 /* Main.storyboard in Resources */,
+				D3CEC8462584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib in Resources */,
 				D3096AE82583619B006EB685 /* LeaderboardTableViewCell.xib in Resources */,
 				D3096ADC258335F7006EB685 /* TodoListTableViewCell.xib in Resources */,
 			);
@@ -339,7 +349,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */,
+				D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */,
 				D3096AE72583619B006EB685 /* LeaderboardTableViewCell.swift in Sources */,
+				D3CEC8482584DD090095D08F /* StaffFeedViewController.swift in Sources */,
 				872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */,
 				D3096ADB258335F7006EB685 /* TodoListTableViewCell.swift in Sources */,
 				872319DF2581F56400AECA57 /* DashboardViewController.swift in Sources */,

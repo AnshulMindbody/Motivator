@@ -40,6 +40,8 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var textFieldSearchBar: UISearchBar!{
         didSet{
             textFieldSearchBar.delegate = self
+            textFieldSearchBar.setImage(UIImage(named: "statusIcon.png"), for: .search, state: .normal)
+            textFieldSearchBar.returnKeyType = .done
         }
     }
     let manager = SocketManager(socketURL: URL(string: "http://localhost:3000")!, config: [.log(true), .compress, .connectParams(["username": "Anshulsd jain"])])
@@ -186,7 +188,7 @@ extension DashboardViewController: UITableViewDataSource {
 extension DashboardViewController {
     
     func loadPieChart(){
-        //        pieChartView.drawHoleEnabled = false
+                pieChartView.drawHoleEnabled = false
         customizeChart(dataPoints: players, values: goals.map{ Double($0) })
         
         //      pieChartView.legend.orientation = .vertical
@@ -294,7 +296,9 @@ extension DashboardViewController: UISearchBarDelegate {
             staffFeedList.append(searchText)
             tableView.reloadData()
         }
+        searchBar.text = ""
     }
+    
 }
 
 extension DashboardViewController {

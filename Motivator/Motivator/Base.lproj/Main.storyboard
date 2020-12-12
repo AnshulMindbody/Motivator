@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2AE-e6-E1n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2AE-e6-E1n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -348,6 +348,69 @@
             </objects>
             <point key="canvasLocation" x="2250.7246376811595" y="-3379.0178571428569"/>
         </scene>
+        <!--Staff Feed-->
+        <scene sceneID="Oos-9h-FCP">
+            <objects>
+                <viewController storyboardIdentifier="StaffFeedViewController" title="Staff Feed" useStoryboardIdentifierAsRestorationIdentifier="YES" id="moq-ZJ-UdI" customClass="StaffFeedViewController" customModule="Motivator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FQs-Hk-Cey">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qnk-Li-s2i">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ofj-Qj-u26" rowHeight="66" style="IBUITableViewCellStyleDefault" id="Typ-Hn-dKd">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Typ-Hn-dKd" id="DNx-8i-F4N">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ofj-Qj-u26">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="66"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="moq-ZJ-UdI" id="uWf-SO-5S0"/>
+                                    <outlet property="delegate" destination="moq-ZJ-UdI" id="yVz-sb-Xbt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fWc-v3-7yo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qnk-Li-s2i" firstAttribute="top" secondItem="fWc-v3-7yo" secondAttribute="top" id="0p8-Ud-TGe"/>
+                            <constraint firstItem="fWc-v3-7yo" firstAttribute="bottom" secondItem="qnk-Li-s2i" secondAttribute="bottom" id="G8j-kz-C3f"/>
+                            <constraint firstItem="qnk-Li-s2i" firstAttribute="leading" secondItem="fWc-v3-7yo" secondAttribute="leading" id="Jde-Py-Uk0"/>
+                            <constraint firstItem="fWc-v3-7yo" firstAttribute="trailing" secondItem="qnk-Li-s2i" secondAttribute="trailing" id="jBH-Lo-Wlx"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Staff Feed" id="zMK-gJ-xOq">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Rog-jK-34p">
+                            <connections>
+                                <action selector="backAction:" destination="moq-ZJ-UdI" id="HgN-E5-i3Z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="qnk-Li-s2i" id="9Ns-Ev-nbr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kio-cK-wJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3918.8405797101454" y="-3362.2767857142858"/>
+        </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Abw-2D-wHt">
             <objects>
@@ -405,6 +468,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l92-cM-RaN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-244.92753623188409" y="-3379.0178571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ixg-OO-d88">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Be0-hi-Zb4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Pui-XA-5Jz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="moq-ZJ-UdI" kind="relationship" relationship="rootViewController" id="GoH-3g-A8Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kum-eD-kit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3008.6956521739135" y="-3362.2767857142858"/>
         </scene>
     </scenes>
     <resources>
