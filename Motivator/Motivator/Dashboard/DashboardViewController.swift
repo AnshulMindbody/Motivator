@@ -75,6 +75,7 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
         "Sell at least 2 products.",
         "Upsell at least 2 services."
     ]
+    var todoCompletedFlagList: [Bool] = [true, false, false, true]
     
     var staffFeedList = [
         "Stan Dupp posted 2 hours ago - I have made a sell of 5 products today.",
@@ -110,9 +111,16 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension DashboardViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if dashboardType == .todoList {
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cell.accessoryType = todoCompletedFlagList[indexPath.row] ? .none : .checkmark
+                todoCompletedFlagList[indexPath.row] = !todoCompletedFlagList[indexPath.row]
+            }
+        }
     }
+
 }
 
 extension DashboardViewController: UITableViewDataSource {
@@ -137,8 +145,8 @@ extension DashboardViewController: UITableViewDataSource {
             let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
             cell.textLabel?.numberOfLines = 0
             cell.textLabel?.text = dashBoardList[indexPath.row]
-            return cell            
-      
+            cell.accessoryType = todoCompletedFlagList[indexPath.row] ? .checkmark : .none
+            return cell
         }
     }
     
@@ -273,6 +281,7 @@ extension DashboardViewController {
         let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
             let textField = alertController.textFields![0] as UITextField
             self.todoList.append(textField.text!)
+            self.todoCompletedFlagList.append(false)
             self.tableView.reloadData()
         })
 
