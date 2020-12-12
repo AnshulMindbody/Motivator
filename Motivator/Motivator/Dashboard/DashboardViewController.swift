@@ -118,6 +118,7 @@ extension DashboardViewController: UITableViewDelegate {
                 cell.accessoryType = todoCompletedFlagList[indexPath.row] ? .none : .checkmark
                 todoCompletedFlagList[indexPath.row] = !todoCompletedFlagList[indexPath.row]
             }
+        }
      else if dashboardType == .dailyChallenge {
             notifyChallengeAlert(dailyChallenge: "")
         }
