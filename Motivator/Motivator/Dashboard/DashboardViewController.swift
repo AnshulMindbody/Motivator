@@ -111,7 +111,9 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
 
 extension DashboardViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if dashboardType == .dailyChallenge {
+            notifyChallengeAlert(dailyChallenge: "")
+        }
     }
 }
 
@@ -264,62 +266,6 @@ extension DashboardViewController {
         }
     }
     
-    func showToDoListAlert(){
-        print("to do clicked")
-        let alertController = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
-        alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter new task"
-        }
-        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
-            let textField = alertController.textFields![0] as UITextField
-            self.todoList.append(textField.text!)
-            self.tableView.reloadData()
-        })
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
-
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func showDailyChallengeAlert(dailyChallenge: String){
-
-        let alertController = UIAlertController(title: "Daily Challenge", message: dailyChallenge, preferredStyle: .alert)
-    
-        let saveAction = UIAlertAction(title: "Accept", style: .default, handler: nil )
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
-
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func addDailyChallenge(){
-        print("to do clicked")
-        let alertController = UIAlertController(title: "Add new challenge", message: "", preferredStyle: .alert)
-        alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter new challenge"
-        }
-        
-        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
-            let textField = alertController.textFields![0] as UITextField
-            self.manager.defaultSocket.emit("challenge", textField.text!)
-            self.dailyChallenge.insert(("You challenge " + textField.text!), at: 0)
-            self.tableView.reloadData()
-        })
-
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
-
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-
-        self.present(alertController, animated: true, completion: nil)
-    }
-
     func loadWelcomeMessage(){
         // Generate top floating entry and set some properties
         var attributes = EKAttributes.topFloat
@@ -384,6 +330,166 @@ extension DashboardViewController {
               }
             ack.with("Got your currentAmount", "dude")
         }
+        
+        
+        socket.on("challengeAccepted") { [self]data, ack in
+            guard let dataDict = data as? [[String: String]] else { return }
+            if let username = dataDict[0]["username"],
+               let message  = dataDict[0]["message"],
+               message == "OK"{
+                let message = (username + " Accepted the challenege.")
+           // self.dailyChallenge.insert(message, at: 0)
+            DispatchQueue.main.async {
+                showAnimatedAltert(message: message)
+            }
+              }
+            ack.with("Got your currentAmount", "dude")
+        }
+        
+        socket.on("challengeValidate") { [self]data, ack in
+            guard let dataDict = data as? [[String: String]] else { return }
+            if let username = dataDict[0]["username"],
+               let message  = dataDict[0]["message"],
+               message == "OK"{
+                let message = ( "\(username) has completed the challenege.")
+           // self.dailyChallenge.insert(message, at: 0)
+            DispatchQueue.main.async {
+                showAnimatedAltert(message: message)
+            }
+              }
+            ack.with("Got your currentAmount", "dude")
+        }
+        
+        socket.on("challengeCompleted") { [self]data, ack in
+            guard let dataDict = data as? [[String: String]] else { return }
+            if let username = dataDict[0]["username"],
+               let message  = dataDict[0]["message"],
+               message == "OK"{
+           // self.dailyChallenge.insert(message, at: 0)
+            DispatchQueue.main.async {
+                showAnimatedAltert(message: "Your chalenge is validate and it is completed now")
+            }
+              }
+            ack.with("Got your currentAmount", "dude")
+        }
+
+        
     }
     
+}
+
+extension DashboardViewController{
+    func showAnimatedAltert(message:String){
+        // Generate top floating entry and set some properties
+        var attributes = EKAttributes.topFloat
+        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.red), EKColor(.green)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
+        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
+        attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
+        attributes.statusBar = .dark
+        attributes.scroll = .enabled(swipeable: true, pullbackAnimation: .jolt)
+        attributes.positionConstraints.maxSize = .init(width: .constant(value: UIScreen.main.bounds.width), height: .intrinsic)
+        attributes.position = .top
+
+        let title = EKProperty.LabelContent(text: "Wohoooo..", style: .init(font: UIFont.boldSystemFont(ofSize: 17), color: .black))
+        let description = EKProperty.LabelContent(text: message, style: .init(font: UIFont.systemFont(ofSize: 14.0), color: .black))
+//        let image = EKProperty.ImageContent(image: UIImage(named: imageName)!, size: CGSize(width: 35, height: 35))
+        let simpleMessage = EKSimpleMessage(image: nil, title: title, description: description)
+        let notificationMessage = EKNotificationMessage(simpleMessage: simpleMessage)
+
+        let contentView = EKNotificationMessageView(with: notificationMessage)
+        SwiftEntryKit.display(entry: contentView, using: attributes)
+
+    }
+    
+    func showToDoListAlert(){
+        print("to do clicked")
+        let alertController = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter new task"
+        }
+        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
+            let textField = alertController.textFields![0] as UITextField
+            self.todoList.append(textField.text!)
+            self.tableView.reloadData()
+        })
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showDailyChallengeAlert(dailyChallenge: String){
+
+        let alertController = UIAlertController(title: "Daily Challenge", message: dailyChallenge, preferredStyle: .alert)
+    
+        let saveAction = UIAlertAction(title: "Accept", style: .default) { _ in
+            self.manager.defaultSocket.emit("challengeAccepted", "OK")
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func addDailyChallenge(){
+        print("to do clicked")
+        let alertController = UIAlertController(title: "Add new challenge", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter new challenge"
+        }
+        
+        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
+            let textField = alertController.textFields![0] as UITextField
+            self.manager.defaultSocket.emit("challenge", textField.text!)
+            self.dailyChallenge.insert(("You challenge " + textField.text!), at: 0)
+            self.tableView.reloadData()
+        })
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func validateDailyChallengeAlert(dailyChallenge: String){
+
+        let alertController = UIAlertController(title: "Validate Challenge", message: dailyChallenge, preferredStyle: .alert)
+    
+        let saveAction = UIAlertAction(title: "Completed", style: .default) { _ in
+            self.manager.defaultSocket.emit("challengeCompleted", "OK")
+        }
+
+        let cancelAction = UIAlertAction(title: "Deny", style: .default, handler: nil )
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+    func notifyChallengeAlert(dailyChallenge: String){
+
+        let alertController = UIAlertController(title: "Validate", message: "Challenge is completed", preferredStyle: .alert)
+    
+        let saveAction = UIAlertAction(title: "Validated", style: .default) { _ in
+            self.manager.defaultSocket.emit("challengeCompleted", "OK")
+        }
+
+        let cancelAction = UIAlertAction(title: "Deny", style: .default, handler: nil )
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+
+
 }
