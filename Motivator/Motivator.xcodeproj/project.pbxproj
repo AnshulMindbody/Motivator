@@ -20,6 +20,7 @@
 		872319EB2581FA5A00AECA57 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 872319EA2581FA5A00AECA57 /* SideMenu */; };
 		872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319ED2582012C00AECA57 /* SideMenuViewController.swift */; };
 		872319F22582058F00AECA57 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 872319F12582058F00AECA57 /* Cosmos */; };
+		87B6ED642584068800EE8694 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 87B6ED632584068800EE8694 /* SocketIO */; };
 		87E12F90258361D10010B6D4 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87E12F8F258361D10010B6D4 /* SwiftEntryKit */; };
 		D3096ADB258335F7006EB685 /* TodoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3096AD9258335F7006EB685 /* TodoListTableViewCell.swift */; };
 		D3096ADC258335F7006EB685 /* TodoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3096ADA258335F7006EB685 /* TodoListTableViewCell.xib */; };
@@ -71,6 +72,7 @@
 				87E12F90258361D10010B6D4 /* SwiftEntryKit in Frameworks */,
 				872319F22582058F00AECA57 /* Cosmos in Frameworks */,
 				5F795A6656C56DAB112E3536 /* Pods_Motivator.framework in Frameworks */,
+				87B6ED642584068800EE8694 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +231,7 @@
 				872319EA2581FA5A00AECA57 /* SideMenu */,
 				872319F12582058F00AECA57 /* Cosmos */,
 				87E12F8F258361D10010B6D4 /* SwiftEntryKit */,
+				87B6ED632584068800EE8694 /* SocketIO */,
 			);
 			productName = Motivator;
 			productReference = 872319B32581EB5E00AECA57 /* Motivator.app */;
@@ -262,6 +265,7 @@
 				872319E92581FA5A00AECA57 /* XCRemoteSwiftPackageReference "SideMenu" */,
 				872319F02582058F00AECA57 /* XCRemoteSwiftPackageReference "Cosmos" */,
 				87E12F8E258361D10010B6D4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
+				87B6ED622584068800EE8694 /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			productRefGroup = 872319B42581EB5E00AECA57 /* Products */;
 			projectDirPath = "";
@@ -569,6 +573,14 @@
 				minimumVersion = 23.0.0;
 			};
 		};
+		87B6ED622584068800EE8694 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 15.2.0;
+			};
+		};
 		87E12F8E258361D10010B6D4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/huri000/SwiftEntryKit";
@@ -594,6 +606,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 872319F02582058F00AECA57 /* XCRemoteSwiftPackageReference "Cosmos" */;
 			productName = Cosmos;
+		};
+		87B6ED632584068800EE8694 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87B6ED622584068800EE8694 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
 		};
 		87E12F8F258361D10010B6D4 /* SwiftEntryKit */ = {
 			isa = XCSwiftPackageProductDependency;

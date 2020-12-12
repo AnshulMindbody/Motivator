@@ -9,6 +9,7 @@ import UIKit
 import Charts
 import Segmentio
 import SwiftEntryKit
+import SocketIO
 
 
 final class DashboardViewController: UIViewController, UITextFieldDelegate {
@@ -29,6 +30,12 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     }
     @IBOutlet var segmentioView: Segmentio!
     @IBOutlet var floatingButton: UIButton!
+    @IBOutlet var textFieldSearchBar: UISearchBar!{
+        didSet{
+            textFieldSearchBar.delegate = self
+        }
+    }
+    let manager = SocketManager(socketURL: URL(string: "http://localhost:3000")!, config: [.log(true), .compress, .connectParams(["username": "Anshulsd jain"])])
     
     var dashBoardList: [String] {
             
@@ -52,12 +59,7 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
                    ]
             case .dailyChallenge:
                 floatingButton.isHidden = false
-                return [
-                   "You have been challenged by Pat Thettick to sell 3 products.",
-                    "Accepting the challenge will earn you 5 points and completing it will earn you 20 points.",
-                    "Stan Dupp has accepted your challenge and that earned him 5 points.",
-                    "You challenged Stan Dupp to complete 6 services.",
-                   ]
+                return dailyChallenge
             case .todoList:
                 floatingButton.isHidden = false
                 return todoList
@@ -66,7 +68,6 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
                 return staffFeedList
             }
         }
-
     
     var todoList: [String] = [
         "Complete 5 services.",
@@ -74,10 +75,18 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
         "Sell at least 2 products.",
         "Upsell at least 2 services."
     ]
+    
     var staffFeedList = [
         "Stan Dupp posted 2 hours ago - I have made a sell of 5 products today.",
         "Mark Ateer posted 4 hours ago - Feelings fresh on a Monday morning,"
     ]
+    
+    var dailyChallenge = [
+        "You have been challenged by Pat Thettick to sell 3 products.",
+         "Accepting the challenge will earn you 5 points and completing it will earn you 20 points.",
+         "Stan Dupp has accepted your challenge and that earned him 5 points.",
+         "You challenged Stan Dupp to complete 6 services.",
+        ]
 
     var proofileImages = ["profile1", "profile2", "profile3"]
     var rankImages = ["rank1", "rank2", "rank3"]
@@ -92,7 +101,8 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Dashboard"
-        loadWelcomeMessage()
+       // loadWelcomeMessage()
+        loadSocketConnection()
         loadPieChart()
         loadSlidingTabControl()
     }
@@ -139,7 +149,6 @@ extension DashboardViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch dashboardType {
-            
         case .leaderboard:
             return 62
         case .upcomingAppointment:
@@ -248,7 +257,7 @@ extension DashboardViewController {
         case .todoList:
             showToDoListAlert()
         case .dailyChallenge:
-            showDailyChallenge()
+            addDailyChallenge()
         case .leaderboard, .upcomingAppointment, .staffFeed:
             print("")
         
@@ -275,36 +284,42 @@ extension DashboardViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func showDailyChallenge(){
-//        print("to do clicked")
-//        let alertController = UIAlertController(title: "Add new challenge", message: "", preferredStyle: .alert)
-//        
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "Staff ID"
-//        }
-//        
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "Enter new challenge"
-//        }
-//        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
-//            if let textFieldID = alertController.textFields?[0] as? UITextField,
-//               let textFielChallenge = alertController.textFields?[1] as? UITextField,
-//               let staffID = textFieldID.text?.isEmpty,
-//               let staffName = textFielChallenge.text?.isEmpty else {
-//          //  self.todoList.append(textField.text!)
-//            self.tableView.reloadData()
-//            }
-//        })
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
-//
-//        alertController.addAction(saveAction)
-//        alertController.addAction(cancelAction)
-//
-//        self.present(alertController, animated: true, completion: nil)
+    func showDailyChallengeAlert(dailyChallenge: String){
+
+        let alertController = UIAlertController(title: "Daily Challenge", message: dailyChallenge, preferredStyle: .alert)
+    
+        let saveAction = UIAlertAction(title: "Accept", style: .default, handler: nil )
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func addDailyChallenge(){
+        print("to do clicked")
+        let alertController = UIAlertController(title: "Add new challenge", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Enter new challenge"
+        }
+        
+        let saveAction = UIAlertAction(title: "Add", style: .default, handler: { alert -> Void in
+            let textField = alertController.textFields![0] as UITextField
+            self.manager.defaultSocket.emit("challenge", textField.text!)
+            self.dailyChallenge.insert(("You challenge " + textField.text!), at: 0)
+            self.tableView.reloadData()
+        })
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
 
-    
     func loadWelcomeMessage(){
         // Generate top floating entry and set some properties
         var attributes = EKAttributes.topFloat
@@ -326,4 +341,49 @@ extension DashboardViewController {
         SwiftEntryKit.display(entry: contentView, using: attributes)
 
     }
+}
+
+extension DashboardViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let searchText = searchBar.text {
+            staffFeedList.append(searchText)
+            tableView.reloadData()
+        }
+    }
+}
+
+extension DashboardViewController {
+    
+    func loadSocketConnection(){
+        
+      
+        let socket = manager.defaultSocket
+
+        socket.on(clientEvent: .connect) {data, ack in
+            print("socket connected")
+        }
+
+
+        socket.connect()
+        
+        socket.emit("connectUser", "anshul jain")
+
+        
+        socket.on("challenge") { [self]data, ack in
+            guard let dataDict = data as? [[String: String]] else { return }
+            if let username = dataDict[0]["username"],
+               let message  = dataDict[0]["message"] {
+                let message = (username + " challenged " + message)
+            self.dailyChallenge.insert(message, at: 0)
+            showDailyChallengeAlert(dailyChallenge: message)
+            DispatchQueue.main.async {
+                tableView.reloadData()
+            }
+              }
+            ack.with("Got your currentAmount", "dude")
+        }
+    }
+    
 }
