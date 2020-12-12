@@ -113,6 +113,7 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
 extension DashboardViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if dashboardType == .todoList {
             if let cell = tableView.cellForRow(at: indexPath) {
                 cell.accessoryType = todoCompletedFlagList[indexPath.row] ? .none : .checkmark
