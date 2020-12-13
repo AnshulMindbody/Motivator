@@ -32,11 +32,11 @@ enum Section: CaseIterable {
     var icon: String {
         switch self {
         case .userProfile:
-            return "UserProfile.png"
+            return "userPro.png"
         case .staffFeed:
             return "StaffFeed.png"
         case .customerComments:
-            return "CustomerComments.png"
+            return "thumbs.png"
         case .redemptionStore:
             return "redemption.png"
         case .logut:
