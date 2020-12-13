@@ -14,6 +14,7 @@
 		8711C95D2585AB4800E09941 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8711C95C2585AB4800E09941 /* JGProgressHUD */; };
 		8711C95F2585ABD500E09941 /* CustomerCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C95E2585ABD500E09941 /* CustomerCommentVC.swift */; };
 		8711C9612585ACA700E09941 /* CustomerCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C9602585ACA700E09941 /* CustomerCommentCell.swift */; };
+		8711C9632585C0B700E09941 /* StaffFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C9622585C0B700E09941 /* StaffFeedCell.swift */; };
 		872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319B62581EB5E00AECA57 /* AppDelegate.swift */; };
 		872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319B82581EB5E00AECA57 /* SceneDelegate.swift */; };
 		872319BE2581EB5E00AECA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872319BC2581EB5E00AECA57 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		8711C92025856DD700E09941 /* DailyChallengeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		8711C95E2585ABD500E09941 /* CustomerCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCommentVC.swift; sourceTree = "<group>"; };
 		8711C9602585ACA700E09941 /* CustomerCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCommentCell.swift; sourceTree = "<group>"; };
+		8711C9622585C0B700E09941 /* StaffFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFeedCell.swift; sourceTree = "<group>"; };
 		872319B32581EB5E00AECA57 /* Motivator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motivator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872319B62581EB5E00AECA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		872319B82581EB5E00AECA57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */,
+				8711C9622585C0B700E09941 /* StaffFeedCell.swift */,
 			);
 			path = "Staff Feed";
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				8711C92125856DD700E09941 /* DailyChallengeTableViewCell.swift in Sources */,
 				872319DF2581F56400AECA57 /* DashboardViewController.swift in Sources */,
 				8711C95F2585ABD500E09941 /* CustomerCommentVC.swift in Sources */,
+				8711C9632585C0B700E09941 /* StaffFeedCell.swift in Sources */,
 				872319E72581F74400AECA57 /* LoginViewController.swift in Sources */,
 				872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */,
 				872319E32581F5B500AECA57 /* TodoListViewController.swift in Sources */,

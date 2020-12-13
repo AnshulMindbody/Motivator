@@ -14,8 +14,8 @@
             filePath = "Motivator/Dashboard/DashboardViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "495"
-            endingLineNumber = "495"
+            startingLineNumber = "497"
+            endingLineNumber = "497"
             landmarkName = "addDailyChallenge()"
             landmarkType = "7">
          </BreakpointContent>

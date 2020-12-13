@@ -10,6 +10,8 @@ import Charts
 import Segmentio
 import SwiftEntryKit
 import SocketIO
+import JGProgressHUD
+import Alamofire
 
 
 protocol DashboardViewType {
@@ -610,9 +612,22 @@ extension UIViewController {
 
 extension DashboardViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.text = ""
         textField.resignFirstResponder()
-         showAnimatedAltert(message: "Staus shared")
+        let login = StaffComment(name: "Anshul", comment: textField.text!)
+        let hud = JGProgressHUD()
+        hud.show(in: self.view)
+        AF.request("http://localhost:3000/staff",
+                   method: .post,
+                   parameters: login,
+                   encoder: JSONParameterEncoder.default).response { response in
+
+                    DispatchQueue.main.async { [self] in
+                        hud.dismiss()
+                        textField.text = ""
+                        showAnimatedAltert(message: "Staus shared succesfully!!!")
+                    }
+        }
+        
         return true
     }
 

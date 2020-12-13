@@ -6,21 +6,37 @@
 //
 
 import UIKit
+import JGProgressHUD
+import Alamofire
+
+struct StaffComment:Codable {
+    let name:String
+    let comment:String
+}
 
 class StaffFeedViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-    var staffFeedList = [
-        "Stan Dupp posted 2 hours ago - I have made a sell of 5 products today.",
-        "Mark Ateer posted 4 hours ago - Feelings fresh on a Monday morning,"
-    ]
+    var staffFeedList = [StaffComment]()
     @IBAction func backAction(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reloadData()
+        self.title = "Customer Comments"
+         let hud =  JGProgressHUD()
+          hud.show(in: self.view)
+        AF.request("http://localhost:3000/staff").validate().responseDecodable(of: [StaffComment].self) { response in
+            DispatchQueue.main.async {
+            guard let  commentList = response.value else {
+                return
+            }
+                self.staffFeedList = commentList
+                hud.dismiss()
+                self.tableView.reloadData()
+            }
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -33,8 +49,8 @@ extension StaffFeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        cell.textLabel?.text = staffFeedList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StaffFeedCell", for: indexPath) as! StaffFeedCell
+        cell.configure(model: staffFeedList[indexPath.row])
         return cell
     }
 }

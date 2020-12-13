@@ -43,9 +43,7 @@ extension SideMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = sideList[indexPath.row]
         if section == .staffFeed{
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "StaffFeedViewController") as! StaffFeedViewController
-            self.navigationController?.present(newViewController, animated: true, completion: nil)
+            performSegue(withIdentifier: "staff", sender: nil)
         }
         if section == .customerComments{
             performSegue(withIdentifier: "customerComment", sender: nil)
