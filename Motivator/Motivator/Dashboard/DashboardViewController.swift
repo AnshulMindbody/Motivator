@@ -36,7 +36,7 @@ struct UpcomingAppointments: DashboardViewType {
 struct ToDo: DashboardViewType {
     var type: DashboardType = .todoList
     var name: String
-    let completed: Bool = false
+    var completed: Bool = false
 }
 
 struct DailyChallenge: DashboardViewType {
@@ -162,10 +162,10 @@ extension DashboardViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if dashboardType == .todoList {
-            if let cell = tableView.cellForRow(at: indexPath) {
-                cell.accessoryType = todoCompletedFlagList[indexPath.row] ? .none : .checkmark
+//            if let cell = tableView.cellForRow(at: indexPath) {
+//                cell.accessoryType = todoCompletedFlagList[indexPath.row] ? .none : .checkmark
                 todoCompletedFlagList[indexPath.row] = !todoCompletedFlagList[indexPath.row]
-            }
+//            }
         }
         else if dashboardType == .dailyChallenge {
             notifyChallengeAlert(dailyChallenge: "")
@@ -202,7 +202,10 @@ extension DashboardViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell") as! TodoListTableViewCell
             let todoModel = dashBoardList[indexPath.row] as! ToDo
             cell.labelName?.text = todoModel.name
-            cell.accessoryType = todoModel.completed ? .checkmark : .none
+            cell.isChecked = todoModel.completed
+            cell.delegate = self
+            cell.checkBox.tag = indexPath.row
+            
             return cell
         }
     }
@@ -225,6 +228,16 @@ extension DashboardViewController: UITableViewDataSource {
         }
     }
     
+}
+
+extension DashboardViewController: TodoListTableViewCellDelegate {
+    
+    func didPressCheckBoxButton(_ tag: Int) {
+        var todoModel = dashBoardList[tag] as! ToDo
+        todoModel.completed = !todoModel.completed
+        self.tableView.reloadData()
+    }
+        
 }
 
 extension DashboardViewController {
@@ -299,15 +312,15 @@ extension DashboardViewController {
                 image: nil
             ),
             SegmentioItem(
-                title: "Upcoming Appointment",
+                title: "Upcoming Appointments",
                 image: nil
             ),
             SegmentioItem(
-                title: "Daily Challenge",
+                title: "Daily Challenges",
                 image: nil
             ),
             SegmentioItem(
-                title: "Todo List",
+                title: "To-do List",
                 image: nil
             )
         ]
