@@ -586,7 +586,7 @@ extension DashboardViewController{
             textField.placeholder = "Tag your colleague"
         }
         alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "few words"
+            textField.placeholder = "Few words"
         }
         
         let saveAction = UIAlertAction(title: "Send", style: .default, handler: { alert -> Void in
@@ -686,6 +686,20 @@ extension DashboardViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+    
+ @IBAction func challengeHelp(){
+    
+    let string = """
+        Challenge accept: 5 points.\n Challenge reject (4th time): 10 points. \n Challenge completed: 25 points. \n Challenge incomplete: -25 points. \n
+    """
+    
+    let alertController = UIAlertController(title: "Help", message: string, preferredStyle: .alert)
+    let cancelAction = UIAlertAction(title: "Show", style: .default, handler: nil )
+    alertController.addAction(cancelAction)
+    self.present(alertController, animated: true, completion: nil)
+
+   
     }
 
 }
