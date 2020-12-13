@@ -145,6 +145,7 @@ final class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = false
         title = "Dashboard"
         // loadWelcomeMessage()
         allowHidingKeyboard()

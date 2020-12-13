@@ -63,6 +63,7 @@ class SideMenuViewController: UIViewController {
 
 extension SideMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         let section = sideList[indexPath.row]
         if section == .staffFeed {
             performSegue(withIdentifier: "staff", sender: nil)
