@@ -21,8 +21,8 @@ class StaffFeedCell: UITableViewCell {
     func configure(model:StaffComment){
         nameLabel.text = model.name
         commentLabel.text = model.comment
-        profileImageView.setImageForName(model.name, backgroundColor: .blue, circular: true, textAttributes: [NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont(name: "OpenSans-SemiBold", size: 30)!, NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.init(white: 1.0, alpha: 0.5)])
-    }
+        profileImageView.setImageForName(model.name, circular:true, textAttributes: nil)
+            }
 
     
 }
