@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -33,15 +33,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvS-Wt-yJt">
+                                <rect key="frame" x="220" y="30" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="JqY-cJ-hi6"/>
+                                    <constraint firstAttribute="height" constant="20" id="jW8-uX-e8D"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="untick"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="C6I-0I-nDc" secondAttribute="bottom" constant="16" id="6R4-Z9-vrW"/>
+                            <constraint firstItem="VvS-Wt-yJt" firstAttribute="centerY" secondItem="AVg-hA-cq7" secondAttribute="centerY" id="9lC-jW-ANx"/>
                             <constraint firstAttribute="trailing" secondItem="C6I-0I-nDc" secondAttribute="trailing" constant="28" id="JhS-Nr-nm9"/>
                             <constraint firstItem="v0Q-19-tdW" firstAttribute="top" secondItem="AVg-hA-cq7" secondAttribute="top" constant="25" id="Q3E-8p-IFj"/>
                             <constraint firstItem="C6I-0I-nDc" firstAttribute="top" secondItem="AVg-hA-cq7" secondAttribute="top" constant="14" id="Y8s-Wu-ja4"/>
                             <constraint firstItem="v0Q-19-tdW" firstAttribute="leading" secondItem="AVg-hA-cq7" secondAttribute="leading" constant="6" id="b6f-Cx-bJO"/>
                             <constraint firstItem="C6I-0I-nDc" firstAttribute="leading" secondItem="v0Q-19-tdW" secondAttribute="trailing" constant="20" id="ldS-2g-rP8"/>
+                            <constraint firstAttribute="trailing" secondItem="VvS-Wt-yJt" secondAttribute="trailing" constant="20" id="nj8-MG-aiD"/>
                             <constraint firstItem="v0Q-19-tdW" firstAttribute="centerY" secondItem="C6I-0I-nDc" secondAttribute="centerY" id="uIs-F7-hbD"/>
                         </constraints>
                     </view>
@@ -63,6 +73,7 @@
     </objects>
     <resources>
         <image name="Tasks" width="27" height="27"/>
+        <image name="untick" width="225" height="225"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

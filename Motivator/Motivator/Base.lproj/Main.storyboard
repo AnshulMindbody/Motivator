@@ -599,7 +599,7 @@
                                                 </constraints>
                                                 <color key="textColor" red="0.14117647058823529" green="0.14509803921568626" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>

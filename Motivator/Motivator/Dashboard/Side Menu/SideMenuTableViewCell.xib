@@ -23,10 +23,14 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Appointment" translatesAutoresizingMaskIntoConstraints="NO" id="t8O-9R-TBr">
                                 <rect key="frame" x="16" y="2" width="26" height="26"/>
+                                <color key="tintColor" red="0.14117647059999999" green="0.1450980392" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="26" id="B5v-f0-QCC"/>
                                     <constraint firstAttribute="height" constant="26" id="ENC-IZ-4ax"/>
                                 </constraints>
+                                <variation key="displayGamut=sRGB-heightClass=regular-userInterfaceIdiom=mac-widthClass=compact">
+                                    <color key="tintColor" red="0.14117647059999999" green="0.1450980392" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4j-0N-ULd">
                                 <rect key="frame" x="57" y="7" width="238" height="16"/>
