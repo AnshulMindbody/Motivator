@@ -13,7 +13,6 @@
 		8711C95A2585AB2000E09941 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8711C9592585AB2000E09941 /* Alamofire */; };
 		8711C95F2585ABD500E09941 /* CustomerCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C95E2585ABD500E09941 /* CustomerCommentVC.swift */; };
 		8711C9612585ACA700E09941 /* CustomerCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C9602585ACA700E09941 /* CustomerCommentCell.swift */; };
-		8711C9632585C0B700E09941 /* StaffFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C9622585C0B700E09941 /* StaffFeedCell.swift */; };
 		872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319B62581EB5E00AECA57 /* AppDelegate.swift */; };
 		872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319B82581EB5E00AECA57 /* SceneDelegate.swift */; };
 		872319BE2581EB5E00AECA57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 872319BC2581EB5E00AECA57 /* Main.storyboard */; };
@@ -35,6 +34,10 @@
 		D3096AE72583619B006EB685 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3096AE52583619B006EB685 /* LeaderboardTableViewCell.swift */; };
 		D3096AE82583619B006EB685 /* LeaderboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3096AE62583619B006EB685 /* LeaderboardTableViewCell.xib */; };
 		D3141E7E2586396E008EEF0C /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D3141E7D2586396E008EEF0C /* JGProgressHUD */; };
+		D3141E8225864640008EEF0C /* QuotesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141E8025864640008EEF0C /* QuotesTableViewCell.swift */; };
+		D3141E8325864640008EEF0C /* QuotesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3141E8125864640008EEF0C /* QuotesTableViewCell.xib */; };
+		D3141E8625864784008EEF0C /* InitialsImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141E8525864784008EEF0C /* InitialsImageView.swift */; };
+		D3141E8D2586482E008EEF0C /* StaffFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3141E8B2586482E008EEF0C /* StaffFeedCell.swift */; };
 		D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8432584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift */; };
 		D3CEC8462584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8442584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib */; };
 		D3CEC8482584DD090095D08F /* StaffFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */; };
@@ -73,7 +76,6 @@
 		8711C92025856DD700E09941 /* DailyChallengeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyChallengeTableViewCell.xib; sourceTree = "<group>"; };
 		8711C95E2585ABD500E09941 /* CustomerCommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCommentVC.swift; sourceTree = "<group>"; };
 		8711C9602585ACA700E09941 /* CustomerCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCommentCell.swift; sourceTree = "<group>"; };
-		8711C9622585C0B700E09941 /* StaffFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFeedCell.swift; sourceTree = "<group>"; };
 		872319B32581EB5E00AECA57 /* Motivator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Motivator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872319B62581EB5E00AECA57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		872319B82581EB5E00AECA57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,10 @@
 		D3096ADA258335F7006EB685 /* TodoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoListTableViewCell.xib; sourceTree = "<group>"; };
 		D3096AE52583619B006EB685 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		D3096AE62583619B006EB685 /* LeaderboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderboardTableViewCell.xib; sourceTree = "<group>"; };
+		D3141E8025864640008EEF0C /* QuotesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTableViewCell.swift; sourceTree = "<group>"; };
+		D3141E8125864640008EEF0C /* QuotesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuotesTableViewCell.xib; sourceTree = "<group>"; };
+		D3141E8525864784008EEF0C /* InitialsImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsImageView.swift; sourceTree = "<group>"; };
+		D3141E8B2586482E008EEF0C /* StaffFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFeedCell.swift; sourceTree = "<group>"; };
 		D3CEC8432584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		D3CEC8442584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingAppointmentTableViewCell.xib; sourceTree = "<group>"; };
 		D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFeedViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 		872319D42581F49700AECA57 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				D3141E7F258645C7008EEF0C /* Motivational Quotes */,
 				872B02BA258639FB00CA4FBA /* Reedemtion Stoe */,
 				872319DC2581F52200AECA57 /* Side Menu */,
 				872319DB2581F50900AECA57 /* Daily Challenge */,
@@ -243,7 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */,
-				8711C9622585C0B700E09941 /* StaffFeedCell.swift */,
+				D3141E8525864784008EEF0C /* InitialsImageView.swift */,
+				D3141E8B2586482E008EEF0C /* StaffFeedCell.swift */,
 			);
 			path = "Staff Feed";
 			sourceTree = "<group>";
@@ -282,6 +290,15 @@
 				872B02BD25863BDD00CA4FBA /* ReedemptionCell.swift */,
 			);
 			path = "Reedemtion Stoe";
+			sourceTree = "<group>";
+		};
+		D3141E7F258645C7008EEF0C /* Motivational Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				D3141E8025864640008EEF0C /* QuotesTableViewCell.swift */,
+				D3141E8125864640008EEF0C /* QuotesTableViewCell.xib */,
+			);
+			path = "Motivational Quotes";
 			sourceTree = "<group>";
 		};
 		D3CEC8642585DB880095D08F /* Fonts */ = {
@@ -420,6 +437,7 @@
 				D3CEC8792585DB880095D08F /* OpenSans-Regular.ttf in Resources */,
 				D3CEC88D2585DDD50095D08F /* Segoe UI.ttf in Resources */,
 				D3CEC8762585DB880095D08F /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				D3141E8325864640008EEF0C /* QuotesTableViewCell.xib in Resources */,
 				D3096ADC258335F7006EB685 /* TodoListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,9 +494,11 @@
 				D3CEC8942585EDC20095D08F /* SideMenuTableViewCell.swift in Sources */,
 				872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */,
 				D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */,
+				D3141E8D2586482E008EEF0C /* StaffFeedCell.swift in Sources */,
 				872B02BE25863BDD00CA4FBA /* ReedemptionCell.swift in Sources */,
 				D3096AE72583619B006EB685 /* LeaderboardTableViewCell.swift in Sources */,
 				D3CEC8482584DD090095D08F /* StaffFeedViewController.swift in Sources */,
+				D3141E8625864784008EEF0C /* InitialsImageView.swift in Sources */,
 				872B02BC25863A3500CA4FBA /* RedemptionStoreVC.swift in Sources */,
 				8711C9612585ACA700E09941 /* CustomerCommentCell.swift in Sources */,
 				872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */,
@@ -486,7 +506,7 @@
 				8711C92125856DD700E09941 /* DailyChallengeTableViewCell.swift in Sources */,
 				872319DF2581F56400AECA57 /* DashboardViewController.swift in Sources */,
 				8711C95F2585ABD500E09941 /* CustomerCommentVC.swift in Sources */,
-				8711C9632585C0B700E09941 /* StaffFeedCell.swift in Sources */,
+				D3141E8225864640008EEF0C /* QuotesTableViewCell.swift in Sources */,
 				872319E72581F74400AECA57 /* LoginViewController.swift in Sources */,
 				872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */,
 				872319E32581F5B500AECA57 /* TodoListViewController.swift in Sources */,
