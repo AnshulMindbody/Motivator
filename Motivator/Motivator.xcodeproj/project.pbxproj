@@ -27,6 +27,7 @@
 		872319F22582058F00AECA57 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 872319F12582058F00AECA57 /* Cosmos */; };
 		872B02BC25863A3500CA4FBA /* RedemptionStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B02BB25863A3500CA4FBA /* RedemptionStoreVC.swift */; };
 		872B02BE25863BDD00CA4FBA /* ReedemptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B02BD25863BDD00CA4FBA /* ReedemptionCell.swift */; };
+		872B02C42586638200CA4FBA /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B02C32586638200CA4FBA /* InitialVC.swift */; };
 		87B6ED642584068800EE8694 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 87B6ED632584068800EE8694 /* SocketIO */; };
 		87E12F90258361D10010B6D4 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87E12F8F258361D10010B6D4 /* SwiftEntryKit */; };
 		D3096ADB258335F7006EB685 /* TodoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3096AD9258335F7006EB685 /* TodoListTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		872319ED2582012C00AECA57 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		872B02BB25863A3500CA4FBA /* RedemptionStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionStoreVC.swift; sourceTree = "<group>"; };
 		872B02BD25863BDD00CA4FBA /* ReedemptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedemptionCell.swift; sourceTree = "<group>"; };
+		872B02C32586638200CA4FBA /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
 		98764932EAF3CFE18B223BD8 /* Pods_Motivator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motivator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2571460B8DC99F8218C1E33 /* Pods-Motivator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.release.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.release.xcconfig"; sourceTree = "<group>"; };
 		D3096AD9258335F7006EB685 /* TodoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewCell.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				872319E62581F74400AECA57 /* LoginViewController.swift */,
+				872B02C32586638200CA4FBA /* InitialVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */,
 				D3141E8D2586482E008EEF0C /* StaffFeedCell.swift in Sources */,
 				872B02BE25863BDD00CA4FBA /* ReedemptionCell.swift in Sources */,
+				872B02C42586638200CA4FBA /* InitialVC.swift in Sources */,
 				D3096AE72583619B006EB685 /* LeaderboardTableViewCell.swift in Sources */,
 				D3CEC8482584DD090095D08F /* StaffFeedViewController.swift in Sources */,
 				D3141E8625864784008EEF0C /* InitialsImageView.swift in Sources */,

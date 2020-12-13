@@ -653,10 +653,10 @@
             </objects>
             <point key="canvasLocation" x="5571" y="-3143"/>
         </scene>
-        <!--View Controller-->
+        <!--InitialVC-->
         <scene sceneID="ZXk-qT-8CB">
             <objects>
-                <viewController id="uZK-ni-WcA" sceneMemberID="viewController">
+                <viewController id="uZK-ni-WcA" customClass="InitialVC" customModule="Motivator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZvY-SU-csa">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -711,6 +711,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E8h-dZ-vOs"/>
+                    <connections>
+                        <outlet property="button" destination="RYV-7A-GGN" id="GMV-TD-DVk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syq-fa-jbU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
