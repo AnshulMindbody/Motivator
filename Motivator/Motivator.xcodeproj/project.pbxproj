@@ -36,6 +36,19 @@
 		D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8432584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift */; };
 		D3CEC8462584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8442584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib */; };
 		D3CEC8482584DD090095D08F /* StaffFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */; };
+		D3CEC8702585DB880095D08F /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8652585DB880095D08F /* OpenSans-SemiBold.ttf */; };
+		D3CEC8712585DB880095D08F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8662585DB880095D08F /* OpenSans-Light.ttf */; };
+		D3CEC8722585DB880095D08F /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8672585DB880095D08F /* OpenSans-Italic.ttf */; };
+		D3CEC8732585DB880095D08F /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8682585DB880095D08F /* OpenSans-ExtraBold.ttf */; };
+		D3CEC8742585DB880095D08F /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8692585DB880095D08F /* OpenSans-LightItalic.ttf */; };
+		D3CEC8752585DB880095D08F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC86A2585DB880095D08F /* OpenSans-Bold.ttf */; };
+		D3CEC8762585DB880095D08F /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC86B2585DB880095D08F /* OpenSans-SemiBoldItalic.ttf */; };
+		D3CEC8772585DB880095D08F /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC86C2585DB880095D08F /* OpenSans-ExtraBoldItalic.ttf */; };
+		D3CEC8782585DB880095D08F /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC86D2585DB880095D08F /* LICENSE.txt */; };
+		D3CEC8792585DB880095D08F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC86E2585DB880095D08F /* OpenSans-Regular.ttf */; };
+		D3CEC87A2585DB880095D08F /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC86F2585DB880095D08F /* OpenSans-BoldItalic.ttf */; };
+		D3CEC88C2585DDD50095D08F /* Segoe UI Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC88A2585DDD50095D08F /* Segoe UI Bold.ttf */; };
+		D3CEC88D2585DDD50095D08F /* Segoe UI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC88B2585DDD50095D08F /* Segoe UI.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +90,21 @@
 		D3CEC8432584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingAppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		D3CEC8442584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingAppointmentTableViewCell.xib; sourceTree = "<group>"; };
 		D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffFeedViewController.swift; sourceTree = "<group>"; };
+		D3CEC8652585DB880095D08F /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		D3CEC8662585DB880095D08F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		D3CEC8672585DB880095D08F /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		D3CEC8682585DB880095D08F /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		D3CEC8692585DB880095D08F /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		D3CEC86A2585DB880095D08F /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		D3CEC86B2585DB880095D08F /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		D3CEC86C2585DB880095D08F /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		D3CEC86D2585DB880095D08F /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		D3CEC86E2585DB880095D08F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		D3CEC86F2585DB880095D08F /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		D3CEC8852585DD7E0095D08F /* Segoe UI Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI Italic.ttf"; sourceTree = "<group>"; };
+		D3CEC8862585DD7E0095D08F /* Segoe UI Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI Bold Italic.ttf"; sourceTree = "<group>"; };
+		D3CEC88A2585DDD50095D08F /* Segoe UI Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI Bold.ttf"; sourceTree = "<group>"; };
+		D3CEC88B2585DDD50095D08F /* Segoe UI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI.ttf"; sourceTree = "<group>"; };
 		F097CAC9A2CBF9F8903DE0ED /* Pods-Motivator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.debug.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +165,7 @@
 				872319BF2581EB6000AECA57 /* Assets.xcassets */,
 				872319C12581EB6000AECA57 /* LaunchScreen.storyboard */,
 				872319C42581EB6000AECA57 /* Info.plist */,
+				D3CEC8642585DB880095D08F /* Fonts */,
 			);
 			path = Motivator;
 			sourceTree = "<group>";
@@ -235,6 +264,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D3CEC8642585DB880095D08F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D3CEC8892585DD9B0095D08F /* Segoe UI */,
+				D3CEC87B2585DCDC0095D08F /* OpenSans */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D3CEC87B2585DCDC0095D08F /* OpenSans */ = {
+			isa = PBXGroup;
+			children = (
+				D3CEC8652585DB880095D08F /* OpenSans-SemiBold.ttf */,
+				D3CEC8662585DB880095D08F /* OpenSans-Light.ttf */,
+				D3CEC8672585DB880095D08F /* OpenSans-Italic.ttf */,
+				D3CEC8682585DB880095D08F /* OpenSans-ExtraBold.ttf */,
+				D3CEC8692585DB880095D08F /* OpenSans-LightItalic.ttf */,
+				D3CEC86A2585DB880095D08F /* OpenSans-Bold.ttf */,
+				D3CEC86B2585DB880095D08F /* OpenSans-SemiBoldItalic.ttf */,
+				D3CEC86C2585DB880095D08F /* OpenSans-ExtraBoldItalic.ttf */,
+				D3CEC86D2585DB880095D08F /* LICENSE.txt */,
+				D3CEC86E2585DB880095D08F /* OpenSans-Regular.ttf */,
+				D3CEC86F2585DB880095D08F /* OpenSans-BoldItalic.ttf */,
+			);
+			path = OpenSans;
+			sourceTree = "<group>";
+		};
+		D3CEC8892585DD9B0095D08F /* Segoe UI */ = {
+			isa = PBXGroup;
+			children = (
+				D3CEC88A2585DDD50095D08F /* Segoe UI Bold.ttf */,
+				D3CEC88B2585DDD50095D08F /* Segoe UI.ttf */,
+				D3CEC8862585DD7E0095D08F /* Segoe UI Bold Italic.ttf */,
+				D3CEC8852585DD7E0095D08F /* Segoe UI Italic.ttf */,
+			);
+			path = "Segoe UI";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,11 +381,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				872319C32581EB6000AECA57 /* LaunchScreen.storyboard in Resources */,
+				D3CEC8732585DB880095D08F /* OpenSans-ExtraBold.ttf in Resources */,
+				D3CEC8742585DB880095D08F /* OpenSans-LightItalic.ttf in Resources */,
 				872319C02581EB6000AECA57 /* Assets.xcassets in Resources */,
+				D3CEC88C2585DDD50095D08F /* Segoe UI Bold.ttf in Resources */,
 				8711C92225856DD700E09941 /* DailyChallengeTableViewCell.xib in Resources */,
+				D3CEC8722585DB880095D08F /* OpenSans-Italic.ttf in Resources */,
+				D3CEC87A2585DB880095D08F /* OpenSans-BoldItalic.ttf in Resources */,
 				872319BE2581EB5E00AECA57 /* Main.storyboard in Resources */,
+				D3CEC8772585DB880095D08F /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				D3CEC8702585DB880095D08F /* OpenSans-SemiBold.ttf in Resources */,
 				D3CEC8462584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib in Resources */,
+				D3CEC8712585DB880095D08F /* OpenSans-Light.ttf in Resources */,
+				D3CEC8752585DB880095D08F /* OpenSans-Bold.ttf in Resources */,
+				D3CEC8782585DB880095D08F /* LICENSE.txt in Resources */,
 				D3096AE82583619B006EB685 /* LeaderboardTableViewCell.xib in Resources */,
+				D3CEC8792585DB880095D08F /* OpenSans-Regular.ttf in Resources */,
+				D3CEC88D2585DDD50095D08F /* Segoe UI.ttf in Resources */,
+				D3CEC8762585DB880095D08F /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				D3096ADC258335F7006EB685 /* TodoListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -230,12 +230,13 @@ extension DashboardViewController: UITableViewDataSource {
 extension DashboardViewController {
     
     func loadPieChart(){
-                pieChartView.drawHoleEnabled = true
+        pieChartView.drawHoleEnabled = true
         customizeChart(dataPoints: players, values: goals.map{ Double($0) })
         pieChartView.legend.enabled = true
         pieChartView.legend.direction = .rightToLeft
         pieChartView.drawEntryLabelsEnabled = false
         pieChartView.drawCenterTextEnabled = false
+        pieChartView.animate(xAxisDuration: 1, yAxisDuration: 1, easingOption: ChartEasingOption.easeInOutQuad)
 
     }
 
@@ -628,7 +629,7 @@ extension DashboardViewController: UITextFieldDelegate {
                     DispatchQueue.main.async { [self] in
                         hud.dismiss()
                         textField.text = ""
-                        showAnimatedAltert(message: "Staus shared succesfully!!!")
+                        showAnimatedAltert(message: "Status shared succesfully!!!")
                     }
         }
         
