@@ -59,6 +59,8 @@ final class DashboardViewController: UIViewController {
     
   
     @IBOutlet var pieChartView: PieChartView!
+    @IBOutlet var scoreLabel: UILabel!
+    
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()
@@ -467,6 +469,8 @@ extension DashboardViewController{
         
         let saveAction = UIAlertAction(title: "Accept", style: .default) { _ in
             self.manager.defaultSocket.emit("challengeAccepted", "OK")
+            self.scoreLabel?.text =  String(Int(self.scoreLabel.text!)! + 25)
+
         }
         
         let rejectAction = UIAlertAction(title: "Reject", style: .default) { _ in

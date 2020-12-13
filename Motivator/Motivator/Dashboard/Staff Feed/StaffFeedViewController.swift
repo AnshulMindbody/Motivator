@@ -24,7 +24,7 @@ class StaffFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Customer Comments"
+         title = "Staff Feed"
          let hud =  JGProgressHUD()
           hud.show(in: self.view)
         AF.request("http://localhost:3000/staff").validate().responseDecodable(of: [StaffComment].self) { response in
