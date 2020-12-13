@@ -251,7 +251,7 @@ extension DashboardViewController {
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
         pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
-        pieChartDataSet.drawValuesEnabled = false
+        pieChartDataSet.drawValuesEnabled = true
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         
