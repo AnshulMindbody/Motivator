@@ -27,6 +27,8 @@
 		872319EB2581FA5A00AECA57 /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 872319EA2581FA5A00AECA57 /* SideMenu */; };
 		872319EE2582012C00AECA57 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872319ED2582012C00AECA57 /* SideMenuViewController.swift */; };
 		872319F22582058F00AECA57 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 872319F12582058F00AECA57 /* Cosmos */; };
+		872B02BC25863A3500CA4FBA /* RedemptionStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B02BB25863A3500CA4FBA /* RedemptionStoreVC.swift */; };
+		872B02BE25863BDD00CA4FBA /* ReedemptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872B02BD25863BDD00CA4FBA /* ReedemptionCell.swift */; };
 		87B6ED642584068800EE8694 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 87B6ED632584068800EE8694 /* SocketIO */; };
 		87E12F90258361D10010B6D4 /* SwiftEntryKit in Frameworks */ = {isa = PBXBuildFile; productRef = 87E12F8F258361D10010B6D4 /* SwiftEntryKit */; };
 		D3096ADB258335F7006EB685 /* TodoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3096AD9258335F7006EB685 /* TodoListTableViewCell.swift */; };
@@ -83,6 +85,8 @@
 		872319E22581F5B500AECA57 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		872319E62581F74400AECA57 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		872319ED2582012C00AECA57 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		872B02BB25863A3500CA4FBA /* RedemptionStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedemptionStoreVC.swift; sourceTree = "<group>"; };
+		872B02BD25863BDD00CA4FBA /* ReedemptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReedemptionCell.swift; sourceTree = "<group>"; };
 		98764932EAF3CFE18B223BD8 /* Pods_Motivator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Motivator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2571460B8DC99F8218C1E33 /* Pods-Motivator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.release.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.release.xcconfig"; sourceTree = "<group>"; };
 		D3096AD9258335F7006EB685 /* TodoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewCell.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		872319D42581F49700AECA57 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				872B02BA258639FB00CA4FBA /* Reedemtion Stoe */,
 				872319DC2581F52200AECA57 /* Side Menu */,
 				872319DB2581F50900AECA57 /* Daily Challenge */,
 				872319DA2581F4F500AECA57 /* Staff Feed */,
@@ -268,6 +273,15 @@
 				98764932EAF3CFE18B223BD8 /* Pods_Motivator.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		872B02BA258639FB00CA4FBA /* Reedemtion Stoe */ = {
+			isa = PBXGroup;
+			children = (
+				872B02BB25863A3500CA4FBA /* RedemptionStoreVC.swift */,
+				872B02BD25863BDD00CA4FBA /* ReedemptionCell.swift */,
+			);
+			path = "Reedemtion Stoe";
 			sourceTree = "<group>";
 		};
 		D3CEC8642585DB880095D08F /* Fonts */ = {
@@ -462,8 +476,10 @@
 				D3CEC8942585EDC20095D08F /* SideMenuTableViewCell.swift in Sources */,
 				872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */,
 				D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */,
+				872B02BE25863BDD00CA4FBA /* ReedemptionCell.swift in Sources */,
 				D3096AE72583619B006EB685 /* LeaderboardTableViewCell.swift in Sources */,
 				D3CEC8482584DD090095D08F /* StaffFeedViewController.swift in Sources */,
+				872B02BC25863A3500CA4FBA /* RedemptionStoreVC.swift in Sources */,
 				8711C9612585ACA700E09941 /* CustomerCommentCell.swift in Sources */,
 				872319B92581EB5E00AECA57 /* SceneDelegate.swift in Sources */,
 				D3096ADB258335F7006EB685 /* TodoListTableViewCell.swift in Sources */,

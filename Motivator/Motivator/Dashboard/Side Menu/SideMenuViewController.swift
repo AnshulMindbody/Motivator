@@ -11,6 +11,7 @@ enum Section: CaseIterable {
     case userProfile
     case staffFeed
     case customerComments
+    case redemptionStore
     case logut
     
     var title: String {
@@ -21,6 +22,8 @@ enum Section: CaseIterable {
             return "Staff Feed"
         case .customerComments:
             return "Customer Comments"
+        case .redemptionStore:
+            return "Redemption Store"
         case .logut:
             return "Logout"
         }
@@ -36,6 +39,8 @@ enum Section: CaseIterable {
             return "CustomerComments.png"
         case .logut:
             return "Logout"
+        case .redemptionStore:
+            return "StaffFeed.png"
         }
         
     }
@@ -65,6 +70,9 @@ extension SideMenuViewController: UITableViewDelegate {
         if section == .customerComments{
             performSegue(withIdentifier: "customerComment", sender: nil)
         }
+        else if section ==  .redemptionStore{
+            performSegue(withIdentifier: "redemptionStore", sender: nil)
+        }
     }
 }
 
@@ -82,7 +90,6 @@ extension SideMenuViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 50
     }
 }
