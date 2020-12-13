@@ -49,6 +49,8 @@
 		D3CEC87A2585DB880095D08F /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC86F2585DB880095D08F /* OpenSans-BoldItalic.ttf */; };
 		D3CEC88C2585DDD50095D08F /* Segoe UI Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC88A2585DDD50095D08F /* Segoe UI Bold.ttf */; };
 		D3CEC88D2585DDD50095D08F /* Segoe UI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC88B2585DDD50095D08F /* Segoe UI.ttf */; };
+		D3CEC8942585EDC20095D08F /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8922585EDC20095D08F /* SideMenuTableViewCell.swift */; };
+		D3CEC8952585EDC20095D08F /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8932585EDC20095D08F /* SideMenuTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +107,8 @@
 		D3CEC8862585DD7E0095D08F /* Segoe UI Bold Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI Bold Italic.ttf"; sourceTree = "<group>"; };
 		D3CEC88A2585DDD50095D08F /* Segoe UI Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI Bold.ttf"; sourceTree = "<group>"; };
 		D3CEC88B2585DDD50095D08F /* Segoe UI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Segoe UI.ttf"; sourceTree = "<group>"; };
+		D3CEC8922585EDC20095D08F /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		D3CEC8932585EDC20095D08F /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		F097CAC9A2CBF9F8903DE0ED /* Pods-Motivator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Motivator.debug.xcconfig"; path = "Target Support Files/Pods-Motivator/Pods-Motivator.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				872319ED2582012C00AECA57 /* SideMenuViewController.swift */,
+				D3CEC8922585EDC20095D08F /* SideMenuTableViewCell.swift */,
+				D3CEC8932585EDC20095D08F /* SideMenuTableViewCell.xib */,
 			);
 			path = "Side Menu";
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 				D3CEC8722585DB880095D08F /* OpenSans-Italic.ttf in Resources */,
 				D3CEC87A2585DB880095D08F /* OpenSans-BoldItalic.ttf in Resources */,
 				872319BE2581EB5E00AECA57 /* Main.storyboard in Resources */,
+				D3CEC8952585EDC20095D08F /* SideMenuTableViewCell.xib in Resources */,
 				D3CEC8772585DB880095D08F /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				D3CEC8702585DB880095D08F /* OpenSans-SemiBold.ttf in Resources */,
 				D3CEC8462584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib in Resources */,
@@ -452,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3CEC8942585EDC20095D08F /* SideMenuTableViewCell.swift in Sources */,
 				872319B72581EB5E00AECA57 /* AppDelegate.swift in Sources */,
 				D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */,
 				D3096AE72583619B006EB685 /* LeaderboardTableViewCell.swift in Sources */,

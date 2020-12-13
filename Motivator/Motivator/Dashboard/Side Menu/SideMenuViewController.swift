@@ -13,7 +13,7 @@ enum Section: CaseIterable {
     case customerComments
     case logut
     
-    var title: String{
+    var title: String {
         switch self {
         case .userProfile:
             return "User Profile"
@@ -26,23 +26,40 @@ enum Section: CaseIterable {
         }
     }
     
+    var icon: String {
+        switch self {
+        case .userProfile:
+            return "UserProfile.png"
+        case .staffFeed:
+            return "StaffFeed.png"
+        case .customerComments:
+            return "CustomerComments.png"
+        case .logut:
+            return "Logout"
+        }
+        
+    }
+    
 }
 
 class SideMenuViewController: UIViewController {
     
     @IBOutlet var tableView:UITableView!
+    
     let sideList = Section.allCases
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Welcome User"
+        title = "Welcome Anshul"
+        
+        tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuTableViewCell")
     }
 }
 
 extension SideMenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = sideList[indexPath.row]
-        if section == .staffFeed{
+        if section == .staffFeed {
             performSegue(withIdentifier: "staff", sender: nil)
         }
         if section == .customerComments{
@@ -58,9 +75,15 @@ extension SideMenuViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-        cell.textLabel?.text = sideList[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell") as! SideMenuTableViewCell
+        cell.menuName?.text = sideList[indexPath.row].title
+        cell.menuIcon?.image = UIImage(imageLiteralResourceName: sideList[indexPath.row].icon)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 50
     }
 }
 
