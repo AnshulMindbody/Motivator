@@ -43,5 +43,5 @@ class TodoListTableViewCell: UITableViewCell {
             }
         }
     }
-    
+
 }

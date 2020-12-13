@@ -233,8 +233,7 @@ extension DashboardViewController: UITableViewDataSource {
 extension DashboardViewController: TodoListTableViewCellDelegate {
     
     func didPressCheckBoxButton(_ tag: Int) {
-        var todoModel = dashBoardList[tag] as! ToDo
-        todoModel.completed = !todoModel.completed
+        todoList[tag].completed = !todoList[tag].completed
         self.tableView.reloadData()
     }
         
