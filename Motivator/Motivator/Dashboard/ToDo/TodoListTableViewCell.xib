@@ -34,12 +34,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VvS-Wt-yJt">
-                                <rect key="frame" x="220" y="30" width="20" height="20"/>
+                                <rect key="frame" x="234" y="30" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="JqY-cJ-hi6"/>
                                     <constraint firstAttribute="height" constant="20" id="jW8-uX-e8D"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="untick"/>
+                                <connections>
+                                    <action selector="checkBoxAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hVp-ms-eVf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,7 +54,7 @@
                             <constraint firstItem="C6I-0I-nDc" firstAttribute="top" secondItem="AVg-hA-cq7" secondAttribute="top" constant="14" id="Y8s-Wu-ja4"/>
                             <constraint firstItem="v0Q-19-tdW" firstAttribute="leading" secondItem="AVg-hA-cq7" secondAttribute="leading" constant="6" id="b6f-Cx-bJO"/>
                             <constraint firstItem="C6I-0I-nDc" firstAttribute="leading" secondItem="v0Q-19-tdW" secondAttribute="trailing" constant="20" id="ldS-2g-rP8"/>
-                            <constraint firstAttribute="trailing" secondItem="VvS-Wt-yJt" secondAttribute="trailing" constant="20" id="nj8-MG-aiD"/>
+                            <constraint firstAttribute="trailing" secondItem="VvS-Wt-yJt" secondAttribute="trailing" constant="6" id="nj8-MG-aiD"/>
                             <constraint firstItem="v0Q-19-tdW" firstAttribute="centerY" secondItem="C6I-0I-nDc" secondAttribute="centerY" id="uIs-F7-hbD"/>
                         </constraints>
                     </view>
@@ -65,6 +68,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="checkBox" destination="VvS-Wt-yJt" id="NnN-cB-vNb"/>
                 <outlet property="labelName" destination="C6I-0I-nDc" id="HvX-nN-aMC"/>
                 <outlet property="viewLay" destination="AVg-hA-cq7" id="seU-8N-zc0"/>
             </connections>
