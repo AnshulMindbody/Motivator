@@ -21,7 +21,7 @@ enum Section: CaseIterable {
         case .staffFeed:
             return "Staff Feed"
         case .customerComments:
-            return "Customer Comments"
+            return "Customer Feedback"
         case .redemptionStore:
             return "Redemption Store"
         case .logut:
@@ -37,10 +37,10 @@ enum Section: CaseIterable {
             return "StaffFeed.png"
         case .customerComments:
             return "CustomerComments.png"
+        case .redemptionStore:
+            return "redemption.png"
         case .logut:
             return "Logout"
-        case .redemptionStore:
-            return "StaffFeed.png"
         }
         
     }

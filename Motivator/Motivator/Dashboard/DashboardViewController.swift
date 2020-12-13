@@ -91,7 +91,7 @@ final class DashboardViewController: UIViewController {
     var dashBoardList: [DashboardViewType] {
         switch dashboardType{
         case .leaderboard:
-            floatingButton.isHidden = true
+            floatingButton.isHidden = false
             return [
                 LeaderBaord(score: "130", level:"30", name: "Leo",image: UIImage(named: "profile1")!),
                 LeaderBaord(score:  "129", level:"29", name: "Anette",image: UIImage(named: "profile2")!),
@@ -323,9 +323,10 @@ extension DashboardViewController {
             showToDoListAlert()
         case .dailyChallenge:
             addDailyChallenge()
-        case .leaderboard, .upcomingAppointment:
-            print("")
-            
+        case .leaderboard:
+            addAppreciationAlert()
+        case .upcomingAppointment:
+            addDailyChallenge()
         }
     }
     
@@ -564,6 +565,45 @@ extension DashboardViewController{
         SwiftEntryKit.display(entry: contentView, using: attributes)
         
     }
+    
+    
+    func addAppreciationAlert(){
+        print("to do clicked")
+        let alertController = UIAlertController(title: "Appreciate", message: "", preferredStyle: .alert)
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "Tag your colleague"
+        }
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.placeholder = "few words"
+        }
+        
+        let saveAction = UIAlertAction(title: "Send", style: .default, handler: { alert -> Void in
+            let textField = alertController.textFields![1] as UITextField
+            let textFieldName = alertController.textFields![0] as UITextField
+
+            let login = StaffComment(name: "Anshul", comment: textFieldName.text! + ": " + textField.text!)
+            let hud = JGProgressHUD()
+            hud.show(in: self.view)
+            AF.request("http://localhost:3000/staff",
+                       method: .post,
+                       parameters: login,
+                       encoder: JSONParameterEncoder.default).response { response in
+
+                        DispatchQueue.main.async { [self] in
+                            hud.dismiss()
+                            textField.text = ""
+                        }
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+
 
     
 }

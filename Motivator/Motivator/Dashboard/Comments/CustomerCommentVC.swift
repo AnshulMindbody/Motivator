@@ -25,7 +25,7 @@ class CustomerCommentVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Customer Comments"
+        self.title = "Customer Feedback"
          let hud =  JGProgressHUD()
           hud.show(in: self.view)
         AF.request("http://localhost:3000/notes").validate().responseDecodable(of: [CustomerComments].self) { response in
