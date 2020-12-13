@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6ABCC795-E5B9-4530-934F-DE3896CA9C6B"
+            uuid = "43BA9AF7-4FEE-47CD-9311-E0613023B982"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Motivator/Dashboard/DashboardViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "365"
-            endingLineNumber = "365"
-            landmarkName = "loadSocketConnection()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AE85D30C-3187-4187-9796-D25C0F8B2DEF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Motivator/Dashboard/DashboardViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "484"
-            endingLineNumber = "484"
-            landmarkName = "validateDailyChallengeAlert(dailyChallenge:)"
+            startingLineNumber = "495"
+            endingLineNumber = "495"
+            landmarkName = "addDailyChallenge()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

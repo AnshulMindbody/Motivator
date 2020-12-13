@@ -8,16 +8,12 @@
 import UIKit
 
 class UpcomingAppointmentTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    @IBOutlet var containerViewLay:UIView! {
+        didSet{
+            containerViewLay.layer.cornerRadius = 10.0
+            containerViewLay.addShadow()
+        }
+    }
+    @IBOutlet var labelName:UILabel!
 }

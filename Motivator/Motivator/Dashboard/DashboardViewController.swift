@@ -53,32 +53,41 @@ enum DashboardType:String, CaseIterable{
 }
 
 
-final class DashboardViewController: UIViewController, UITextFieldDelegate {
+final class DashboardViewController: UIViewController {
     
   
     @IBOutlet var pieChartView: PieChartView!
     @IBOutlet var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()
+            tableView.register(UINib(nibName: "LeaderboardTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaderboardTableViewCell")
+            tableView.register(UINib(nibName: "UpcomingAppointmentTableViewCell", bundle: nil), forCellReuseIdentifier: "UpcomingAppointmentTableViewCell")
+            tableView.register(UINib(nibName: "DailyChallengeTableViewCell", bundle: nil), forCellReuseIdentifier: "DailyChallengeTableViewCell")
+            tableView.register(UINib(nibName: "TodoListTableViewCell", bundle: nil), forCellReuseIdentifier: "TodoListTableViewCell")
+        }
+    }
+    @IBOutlet var userRatingProfileView: UIView! {
+        didSet {
+            userRatingProfileView.layer.cornerRadius = 10.0
+            userRatingProfileView.addShadow()
         }
     }
     @IBOutlet var segmentioView: Segmentio!
     @IBOutlet var floatingButton: UIButton!
-    @IBOutlet var textFieldSearchBar: UISearchBar!{
+    @IBOutlet var textField: UITextField!{
         didSet{
-            textFieldSearchBar.delegate = self
-            textFieldSearchBar.setImage(UIImage(named: "statusIcon.png"), for: .search, state: .normal)
-            textFieldSearchBar.returnKeyType = .done
+            textField.delegate = self
+            textField.layer.cornerRadius = 10.0
+            textField.addShadow()
         }
     }
-    let manager = SocketManager(socketURL: URL(string: "http://localhost:3000")!, config: [.log(true), .compress, .connectParams(["username": "Anshulsd jain"])])
+    
+    let manager = SocketManager(socketURL: URL(string: "http://localhost:3001")!, config: [.log(true), .compress, .connectParams(["username": "Anshulsd jain"])])
     
     var dashBoardList: [DashboardViewType] {
-        
         switch dashboardType{
         case .leaderboard:
             floatingButton.isHidden = true
-            self.tableView.register(UINib(nibName: "LeaderboardTableViewCell", bundle: nil), forCellReuseIdentifier: "LeaderboardTableViewCell")
             return [
                 LeaderBaord(score: "130", level:"30", name: "Leo",image: UIImage(named: "profile1")!),
                 LeaderBaord(score:  "129", level:"29", name: "Anette",image: UIImage(named: "profile2")!),
@@ -99,9 +108,6 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
         case .todoList:
             floatingButton.isHidden = false
             return todoList
-//        case .staffFeed:
-//            floatingButton.isHidden = true
-//            return staffFeedList
         }
     }
     
@@ -119,7 +125,8 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     ]
     
     var dailyChallenge = [
-        DailyChallenge(name: "You have been challenged by Pat Thettick to sell 3 products."),
+        
+        DailyChallenge(name: "You have been challenged by Pat Thettick to sell 3 products.", accepted: true, completed: false, rejected: false),
         DailyChallenge(name: "Accepting the challenge will earn you 5 points and completing it will earn you 20 points."),
         DailyChallenge(name: "Stan Dupp has accepted your challenge and that earned him 5 points."),
         DailyChallenge(name: "You challenged Stan Dupp to complete 6 services.")
@@ -131,13 +138,14 @@ final class DashboardViewController: UIViewController, UITextFieldDelegate {
     var sections: [DashboardType] = DashboardType.allCases
     var content = [SegmentioItem]()
     
-    let players = ["Daily Challenges", "To Do"]
+    let players = ["Challenges", "ToDo Tasks"]
     let goals = [55, 45]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Dashboard"
         // loadWelcomeMessage()
+        allowHidingKeyboard()
         loadSocketConnection()
         loadPieChart()
         loadSlidingTabControl()
@@ -167,25 +175,29 @@ extension DashboardViewController: UITableViewDataSource {
         
         switch dashboardType {
         
-        case .upcomingAppointment, .dailyChallenge:
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-            cell.textLabel?.numberOfLines = 0
-            cell.textLabel?.text = dashBoardList[indexPath.row].name
+        case .dailyChallenge:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DailyChallengeTableViewCell") as! DailyChallengeTableViewCell//UITableViewCell(style: .value1, reuseIdentifier: "LeaderboardTableViewCell") as! LeaderboardTableViewCell
+            let dailyChallenge = dashBoardList[indexPath.row] as! DailyChallenge
+            cell.configure(model: dailyChallenge)
             return cell
         case .leaderboard:
             let cell = tableView.dequeueReusableCell(withIdentifier: "LeaderboardTableViewCell") as! LeaderboardTableViewCell//UITableViewCell(style: .value1, reuseIdentifier: "LeaderboardTableViewCell") as! LeaderboardTableViewCell
             let leaderBaordModel = dashBoardList[indexPath.row] as! LeaderBaord
             cell.nameLabel?.numberOfLines = 0
             cell.nameLabel?.text = leaderBaordModel.name
+            cell.scoreLabel?.text = leaderBaordModel.score
+            cell.levelLabel?.text = leaderBaordModel.level
             cell.profileImageview.image = leaderBaordModel.image
-            cell.rankImageview.image = UIImage(named: rankImages[indexPath.row])
             return cell
-            
+        case .upcomingAppointment:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UpcomingAppointmentTableViewCell") as! UpcomingAppointmentTableViewCell
+            let upcomingAppointments = dashBoardList[indexPath.row] as! UpcomingAppointments
+            cell.labelName?.text = upcomingAppointments.name
+            return cell
         case .todoList:
-            let cell = UITableViewCell(style: .value1, reuseIdentifier: "Cell")
-            cell.textLabel?.numberOfLines = 0
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TodoListTableViewCell") as! TodoListTableViewCell
             let todoModel = dashBoardList[indexPath.row] as! ToDo
-            cell.textLabel?.text = todoModel.name
+            cell.labelName?.text = todoModel.name
             cell.accessoryType = todoModel.completed ? .checkmark : .none
             return cell
         }
@@ -199,13 +211,13 @@ extension DashboardViewController: UITableViewDataSource {
         
         switch dashboardType {
         case .leaderboard:
-            return 62
+            return 100
         case .upcomingAppointment:
-            return 50
+            return 100
         case .dailyChallenge:
-            return 50
+            return 100
         case .todoList:
-            return 50
+            return 100
         }
     }
     
@@ -214,12 +226,13 @@ extension DashboardViewController: UITableViewDataSource {
 extension DashboardViewController {
     
     func loadPieChart(){
-                pieChartView.drawHoleEnabled = false
+                pieChartView.drawHoleEnabled = true
         customizeChart(dataPoints: players, values: goals.map{ Double($0) })
-        
-        //      pieChartView.legend.orientation = .vertical
-        //      pieChartView.legend.verticalAlignment = .top
-        pieChartView.legend.enabled = false
+        pieChartView.legend.enabled = true
+        pieChartView.legend.direction = .rightToLeft
+        pieChartView.drawEntryLabelsEnabled = false
+        pieChartView.drawCenterTextEnabled = false
+
     }
 
     func customizeChart(dataPoints: [String], values: [Double]) {
@@ -233,6 +246,7 @@ extension DashboardViewController {
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
         pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
+        pieChartDataSet.drawValuesEnabled = false
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         
@@ -247,12 +261,14 @@ extension DashboardViewController {
     
     private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
         var colors: [UIColor] = []
-        for _ in 0..<numbersOfColor {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+        for i in 0..<numbersOfColor {
+            if i == 0 {
+            let color = UIColor.orange
             colors.append(color)
+            } else if i == 1 {
+                let color = UIColor.systemBlue
+                colors.append(color)
+            }
         }
         return colors
         
@@ -343,7 +359,7 @@ extension DashboardViewController {
             if let username = dataDict[0]["username"],
                let message  = dataDict[0]["message"] {
                 let message = (username + " challenged " + message)
-                self.dailyChallenge.insert(DailyChallenge(name: message), at: 0)
+                self.dailyChallenge.insert(DailyChallenge(name: message, accepted: true), at: 0)
                 showDailyChallengeAlert(dailyChallenge: message)
                 DispatchQueue.main.async {
                     tableView.reloadData()
@@ -359,7 +375,9 @@ extension DashboardViewController {
                let message  = dataDict[0]["message"],
                message == "OK"{
                 let message = (username + " Accepted the challenege.")
-                // self.dailyChallenge.insert(message, at: 0)
+                self.dailyChallenge.remove(at: 0)
+                self.dailyChallenge.insert(DailyChallenge(name: ("You challenge " + textField.text!), accepted: true), at: 0)
+                tableView.reloadData()
                 DispatchQueue.main.async {
                     showAnimatedAltert(message: message)
                 }
@@ -399,11 +417,10 @@ extension DashboardViewController {
 }
 
 extension DashboardViewController{
-    
     func showAnimatedAltert(message:String){
         // Generate top floating entry and set some properties
         var attributes = EKAttributes.topFloat
-        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.red), EKColor(.green)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
+        attributes.entryBackground = .color(color: EKColor(red: 238, green: 137, blue: 0))
         attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
         attributes.shadow = .active(with: .init(color: .black, opacity: 0.5, radius: 10, offset: .zero))
         attributes.statusBar = .dark
@@ -475,9 +492,9 @@ extension DashboardViewController{
         
         let saveAction = UIAlertAction(title: "Challenge", style: .default, handler: { alert -> Void in
             let textField = alertController.textFields![1] as UITextField
-            self.manager.defaultSocket.emit("challenge", textField.text!)
             self.dailyChallenge.insert(DailyChallenge(name: ("You challenge " + textField.text!)), at: 0)
             self.tableView.reloadData()
+            self.manager.defaultSocket.emit("challenge", textField.text!)
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil )
@@ -542,4 +559,61 @@ extension DashboardViewController{
     }
 
     
+}
+
+
+extension UIView {
+func addShadow(shadowColor: CGColor = UIColor.black.cgColor,
+                   shadowOffset: CGSize = CGSize(width: 1.0, height: 2.0),
+                   shadowOpacity: Float = 0.4,
+                   shadowRadius: CGFloat = 3.0) {
+        layer.shadowColor = shadowColor
+        layer.shadowOffset = shadowOffset
+        layer.shadowOpacity = shadowOpacity
+        layer.shadowRadius = shadowRadius
+        layer.masksToBounds = false
+    }
+}
+
+
+class TextField: UITextField {
+
+    let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: padding)
+    }
+}
+
+
+extension UIViewController {
+
+    func allowHidingKeyboard() {
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+extension DashboardViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.text = ""
+        textField.resignFirstResponder()
+         showAnimatedAltert(message: "Staus shared")
+        return true
+    }
+
 }

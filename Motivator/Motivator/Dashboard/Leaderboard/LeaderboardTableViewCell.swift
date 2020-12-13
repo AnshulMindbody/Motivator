@@ -9,21 +9,21 @@ import UIKit
 
 class LeaderboardTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerViewLay: UIView!{
+        didSet{
+            containerViewLay.layer.cornerRadius = 10.0
+            containerViewLay.addShadow()
+        }
+    }
     @IBOutlet weak var profileImageview: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var rankImageview: UIImageView!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         profileImageview.layer.cornerRadius = profileImageview.frame.size.height/2
-        containerView.layer.cornerRadius = 10
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

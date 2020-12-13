@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire",
+        "state": {
+          "branch": null,
+          "revision": "9e0328127dfb801cefe8ac53a13c0c90a7770448",
+          "version": "5.4.0"
+        }
+      },
+      {
         "package": "Conduit",
         "repositoryURL": "https://github.com/mindbody/Conduit.git",
         "state": {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "cce521e734d0090494bd4afab5fd2e2f2465c1af",
           "version": "23.0.0"
+        }
+      },
+      {
+        "package": "JGProgressHUD",
+        "repositoryURL": "https://github.com/JonasGessner/JGProgressHUD",
+        "state": {
+          "branch": null,
+          "revision": "78d7cd35f1d90ff74fd82e486f2cbe4b24be8cf9",
+          "version": "2.2.0"
         }
       },
       {
