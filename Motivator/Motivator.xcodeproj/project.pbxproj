@@ -11,7 +11,6 @@
 		8711C92125856DD700E09941 /* DailyChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C91F25856DD700E09941 /* DailyChallengeTableViewCell.swift */; };
 		8711C92225856DD700E09941 /* DailyChallengeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8711C92025856DD700E09941 /* DailyChallengeTableViewCell.xib */; };
 		8711C95A2585AB2000E09941 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8711C9592585AB2000E09941 /* Alamofire */; };
-		8711C95D2585AB4800E09941 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 8711C95C2585AB4800E09941 /* JGProgressHUD */; };
 		8711C95F2585ABD500E09941 /* CustomerCommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C95E2585ABD500E09941 /* CustomerCommentVC.swift */; };
 		8711C9612585ACA700E09941 /* CustomerCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C9602585ACA700E09941 /* CustomerCommentCell.swift */; };
 		8711C9632585C0B700E09941 /* StaffFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8711C9622585C0B700E09941 /* StaffFeedCell.swift */; };
@@ -33,6 +32,7 @@
 		D3096ADC258335F7006EB685 /* TodoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3096ADA258335F7006EB685 /* TodoListTableViewCell.xib */; };
 		D3096AE72583619B006EB685 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3096AE52583619B006EB685 /* LeaderboardTableViewCell.swift */; };
 		D3096AE82583619B006EB685 /* LeaderboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3096AE62583619B006EB685 /* LeaderboardTableViewCell.xib */; };
+		D3141E7E2586396E008EEF0C /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = D3141E7D2586396E008EEF0C /* JGProgressHUD */; };
 		D3CEC8452584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8432584CA4F0095D08F /* UpcomingAppointmentTableViewCell.swift */; };
 		D3CEC8462584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3CEC8442584CA4F0095D08F /* UpcomingAppointmentTableViewCell.xib */; };
 		D3CEC8482584DD090095D08F /* StaffFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEC8472584DD090095D08F /* StaffFeedViewController.swift */; };
@@ -121,7 +121,7 @@
 				8711C95A2585AB2000E09941 /* Alamofire in Frameworks */,
 				872319EB2581FA5A00AECA57 /* SideMenu in Frameworks */,
 				87E12F90258361D10010B6D4 /* SwiftEntryKit in Frameworks */,
-				8711C95D2585AB4800E09941 /* JGProgressHUD in Frameworks */,
+				D3141E7E2586396E008EEF0C /* JGProgressHUD in Frameworks */,
 				872319F22582058F00AECA57 /* Cosmos in Frameworks */,
 				5F795A6656C56DAB112E3536 /* Pods_Motivator.framework in Frameworks */,
 				87B6ED642584068800EE8694 /* SocketIO in Frameworks */,
@@ -334,7 +334,7 @@
 				87E12F8F258361D10010B6D4 /* SwiftEntryKit */,
 				87B6ED632584068800EE8694 /* SocketIO */,
 				8711C9592585AB2000E09941 /* Alamofire */,
-				8711C95C2585AB4800E09941 /* JGProgressHUD */,
+				D3141E7D2586396E008EEF0C /* JGProgressHUD */,
 			);
 			productName = Motivator;
 			productReference = 872319B32581EB5E00AECA57 /* Motivator.app */;
@@ -370,7 +370,7 @@
 				87E12F8E258361D10010B6D4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */,
 				87B6ED622584068800EE8694 /* XCRemoteSwiftPackageReference "socket" */,
 				8711C9582585AB2000E09941 /* XCRemoteSwiftPackageReference "Alamofire" */,
-				8711C95B2585AB4800E09941 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				D3141E7C2586396E008EEF0C /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 872319B42581EB5E00AECA57 /* Products */;
 			projectDirPath = "";
@@ -685,14 +685,6 @@
 				minimumVersion = 5.4.0;
 			};
 		};
-		8711C95B2585AB4800E09941 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
 		872319CB2581EEC900AECA57 /* XCRemoteSwiftPackageReference "Conduit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mindbody/Conduit.git";
@@ -733,6 +725,14 @@
 				minimumVersion = 1.2.6;
 			};
 		};
+		D3141E7C2586396E008EEF0C /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -740,11 +740,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8711C9582585AB2000E09941 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		8711C95C2585AB4800E09941 /* JGProgressHUD */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8711C95B2585AB4800E09941 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
-			productName = JGProgressHUD;
 		};
 		872319CC2581EEC900AECA57 /* Conduit */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -770,6 +765,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 87E12F8E258361D10010B6D4 /* XCRemoteSwiftPackageReference "SwiftEntryKit" */;
 			productName = SwiftEntryKit;
+		};
+		D3141E7D2586396E008EEF0C /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D3141E7C2586396E008EEF0C /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
