@@ -34,6 +34,7 @@ class CustomerCommentVC: UIViewController {
                 return
             }
                 self.commentList = commentList
+                self.commentList.reverse()
                 hud.dismiss()
                 self.tableView.reloadData()
             }

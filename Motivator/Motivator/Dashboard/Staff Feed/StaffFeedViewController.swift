@@ -33,6 +33,7 @@ class StaffFeedViewController: UIViewController {
                 return
             }
                 self.staffFeedList = commentList
+                self.staffFeedList.reverse()
                 hud.dismiss()
                 self.tableView.reloadData()
             }

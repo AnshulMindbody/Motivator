@@ -263,7 +263,7 @@
                                                     <rect key="frame" x="30" y="10" width="368" height="122"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y3C-ya-625">
-                                                            <rect key="frame" x="15" y="42" width="40" height="40"/>
+                                                            <rect key="frame" x="15" y="41" width="40" height="40"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="40" id="AvB-BT-HIL"/>
                                                                 <constraint firstAttribute="height" constant="40" id="XlV-B1-eCS"/>
@@ -271,7 +271,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeA-Z7-lGc">
                                                             <rect key="frame" x="71" y="14" width="247" height="100"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -280,7 +280,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="DeA-Z7-lGc" secondAttribute="trailing" constant="50" id="JtY-cu-lJE"/>
                                                         <constraint firstAttribute="bottom" secondItem="DeA-Z7-lGc" secondAttribute="bottom" constant="8" id="Lbe-b3-QnH"/>
-                                                        <constraint firstItem="Y3C-ya-625" firstAttribute="top" secondItem="Y7R-3c-xVZ" secondAttribute="top" constant="42" id="URx-Lt-6hQ"/>
+                                                        <constraint firstItem="Y3C-ya-625" firstAttribute="centerY" secondItem="Y7R-3c-xVZ" secondAttribute="centerY" id="n1S-NU-bMC"/>
                                                         <constraint firstItem="DeA-Z7-lGc" firstAttribute="top" secondItem="Y7R-3c-xVZ" secondAttribute="top" constant="14" id="pST-m5-625"/>
                                                         <constraint firstItem="Y3C-ya-625" firstAttribute="leading" secondItem="Y7R-3c-xVZ" secondAttribute="leading" constant="15" id="tKw-b3-01E"/>
                                                         <constraint firstItem="DeA-Z7-lGc" firstAttribute="leading" secondItem="Y3C-ya-625" secondAttribute="trailing" constant="16" id="v6N-Ew-3Ah"/>

@@ -34,7 +34,7 @@ extension RedemptionStoreVC: UITableViewDelegate{
 extension RedemptionStoreVC: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        140
+        100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
