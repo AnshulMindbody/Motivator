@@ -129,21 +129,19 @@ final class DashboardViewController: UIViewController {
     ]
     
     var dailyChallenge = [
-        
+        DailyChallenge(name: "Accepting the challenge will earn you 5 points and completing it will earn you 20 points.",completed: true),
         DailyChallenge(name: "You have been challenged by Pat Thettick to sell 3 products.", accepted: true, completed: false, rejected: false),
-        DailyChallenge(name: "Accepting the challenge will earn you 5 points and completing it will earn you 20 points."),
         DailyChallenge(name: "Stan Dupp has accepted your challenge and that earned him 5 points."),
         DailyChallenge(name: "You challenged Stan Dupp to complete 6 services.")
     ]
     
-    var rankImages = ["rank1", "rank2", "rank3"]
     
     var dashboardType: DashboardType = .leaderboard
     var sections: [DashboardType] = DashboardType.allCases
     var content = [SegmentioItem]()
     
     let players = ["Challenges", "ToDo Tasks"]
-    let goals = [55, 45]
+    var goals = [55, 45]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -234,6 +232,7 @@ extension DashboardViewController: TodoListTableViewCellDelegate {
     
     func didPressCheckBoxButton(_ tag: Int) {
         todoList[tag].completed = !todoList[tag].completed
+        scoreLabel?.text =  String(Int(self.scoreLabel.text!)! + 1)
         self.tableView.reloadData()
     }
         
@@ -311,7 +310,7 @@ extension DashboardViewController {
                 image: nil
             ),
             SegmentioItem(
-                title: "Upcoming Appointments",
+                title: "Upcoming bookings",
                 image: nil
             ),
             SegmentioItem(
@@ -483,7 +482,7 @@ extension DashboardViewController{
         
         let saveAction = UIAlertAction(title: "Accept", style: .default) { _ in
             self.manager.defaultSocket.emit("challengeAccepted", "OK")
-            self.scoreLabel?.text =  String(Int(self.scoreLabel.text!)! + 25)
+            self.scoreLabel?.text =  String(Int(self.scoreLabel.text!)! + 5)
 
         }
         
@@ -542,13 +541,14 @@ extension DashboardViewController{
     }
     
     func notifyChallengeAlert(dailyChallenge: String){
-        let alertController = UIAlertController(title: "Validate", message: "Challenge is completed", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Completed", message: "Mark Challenge as completed", preferredStyle: .alert)
         
-        let saveAction = UIAlertAction(title: "Validated", style: .default) { _ in
+        let saveAction = UIAlertAction(title: "Completed", style: .default) { _ in
+            self.scoreLabel?.text =  String(Int(self.scoreLabel.text!)! + 25)
             self.manager.defaultSocket.emit("challengeCompleted", "OK")
         }
         
-        let cancelAction = UIAlertAction(title: "Deny", style: .default, handler: nil )
+        let cancelAction = UIAlertAction(title: "OK", style: .default, handler: nil )
         
         alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
@@ -691,11 +691,12 @@ extension DashboardViewController: UITextFieldDelegate {
  @IBAction func challengeHelp(){
     
     let string = """
-        Challenge accept: 5 points.\n Challenge reject (4th time): 10 points. \n Challenge completed: 25 points. \n Challenge incomplete: -25 points. \n
+        Challenge accept: 5 points.\n Challenge reject (4th time): -10 points. \n Challenge completed: 25 points. \n Challenge incomplete: -25 points. \n Every completed task in the to-do list earn 1 Point.
+
     """
     
     let alertController = UIAlertController(title: "Help", message: string, preferredStyle: .alert)
-    let cancelAction = UIAlertAction(title: "Show", style: .default, handler: nil )
+    let cancelAction = UIAlertAction(title: "OK", style: .default, handler: nil )
     alertController.addAction(cancelAction)
     self.present(alertController, animated: true, completion: nil)
 

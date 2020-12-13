@@ -25,7 +25,11 @@ class DailyChallengeTableViewCell: UITableViewCell {
     
     func configure(model: DailyChallenge){
         labelName.text = model.name
-        if model.accepted {
+        if model.completed {
+            rejectButton.isHidden = true
+            acceptButton.setTitle("Completed", for: .normal)
+        }
+      else if model.accepted {
             rejectButton.isHidden = true
             acceptButton.setTitle("Accepted", for: .normal)
         } else if model.rejected {
